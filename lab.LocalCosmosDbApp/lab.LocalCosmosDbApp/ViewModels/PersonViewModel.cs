@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -7,16 +8,21 @@ namespace lab.LocalCosmosDbApp.ViewModels
     public class PersonViewModel
     {
         [Key]
-        public int Id { get; set; }
+        public string Id { get; set; }
 
-        [DisplayName("First Name")]
-        [Required(ErrorMessage = "First Name is required")]
+        [DisplayName("Name")]
+        [Required(ErrorMessage = "Name is required")]
         [MaxLength(200)]
-        public string FirstName { get; set; }
+        public string PersonName { get; set; }
 
-        [DisplayName("Age")]
-        [Required(ErrorMessage = "Age is required")]
-        public int Age { get; set; }
+        [DisplayName("Email")]
+        [Required(ErrorMessage = "Email is required")]
+        [MaxLength(200)]
+        public string EmailAddress { get; set; }
+
+        [DisplayName("Date Of Birth")]
+        [Required(ErrorMessage = "Date Of Birth is required")]
+        public DateTime DateOfBirth { get; set; }
 
     }
 }

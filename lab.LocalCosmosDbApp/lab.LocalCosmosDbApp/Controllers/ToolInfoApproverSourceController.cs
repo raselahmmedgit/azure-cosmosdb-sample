@@ -13,30 +13,30 @@ using DataTables.AspNet.AspNetCore;
 
 namespace lab.LocalCosmosDbApp.Controllers
 {
-    public class PersonController : BaseController
+    public class ToolInfoApproverSourceController : BaseController
     {
         #region Global Variable Declaration
-        private readonly ILogger<PersonController> _logger;
-        private static IPersonManager _iPersonManager;
+        private readonly ILogger<ToolInfoApproverSourceController> _logger;
+        private static IToolInfoApproverSourceManager _iToolInfoApproverSourceManager;
         #endregion
 
         #region Constructor
-        public PersonController(IPersonManager iPersonManager)
+        public ToolInfoApproverSourceController(IToolInfoApproverSourceManager iToolInfoApproverSourceManager)
         {
             ILoggerFactory loggerFactory = new LoggerFactory();
-            _logger = loggerFactory.CreateLogger<PersonController>();
-            _iPersonManager = iPersonManager;
+            _logger = loggerFactory.CreateLogger<ToolInfoApproverSourceController>();
+            _iToolInfoApproverSourceManager = iToolInfoApproverSourceManager;
         }
         #endregion
 
         #region Actions
 
-        // GET: Person
+        // GET: ToolInfoApproverSource
         public async Task<IActionResult> Index()
         {
             try
             {
-                var viewModelList = await _iPersonManager.GetPersonsAsync();
+                var viewModelList = await _iToolInfoApproverSourceManager.GetToolInfoApproverSourcesAsync();
                 return View(viewModelList);
             }
             catch (Exception ex)
@@ -51,7 +51,7 @@ namespace lab.LocalCosmosDbApp.Controllers
         {
             try
             {
-                DataTablesResponse response = await _iPersonManager.GetDataTablesResponseAsync(request);
+                DataTablesResponse response = await _iToolInfoApproverSourceManager.GetDataTablesResponseAsync(request);
                 return new DataTablesJsonResult(response, true);
             }
             catch (Exception ex)
@@ -60,12 +60,12 @@ namespace lab.LocalCosmosDbApp.Controllers
             }
         }
 
-        // GET: Person/Details/5
+        // GET: ToolInfoApproverSource/Details/5
         public async Task<IActionResult> Details(string id)
         {
             try
             {
-                var viewModel = await _iPersonManager.GetPersonAsync(id);
+                var viewModel = await _iToolInfoApproverSourceManager.GetToolInfoApproverSourceAsync(id);
                 if (viewModel == null)
                 {
                     return NotFound();
@@ -79,7 +79,7 @@ namespace lab.LocalCosmosDbApp.Controllers
             }
         }
 
-        // GET: Person/Create
+        // GET: ToolInfoApproverSource/Create
         public IActionResult Create()
         {
             try
@@ -92,16 +92,16 @@ namespace lab.LocalCosmosDbApp.Controllers
             }
         }
 
-        // POST: Person/Create
+        // POST: ToolInfoApproverSource/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(PersonViewModel personViewModel)
+        public async Task<IActionResult> Create(ToolInfoApproverSourceViewModel personViewModel)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    await _iPersonManager.InsertPersonAsync(personViewModel);
+                    await _iToolInfoApproverSourceManager.InsertToolInfoApproverSourceAsync(personViewModel);
                     return RedirectToAction(nameof(Index));
                 }
                 return View(personViewModel);
@@ -112,12 +112,12 @@ namespace lab.LocalCosmosDbApp.Controllers
             }
         }
 
-        // GET: Person/Edit/5
+        // GET: ToolInfoApproverSource/Edit/5
         public async Task<IActionResult> Edit(string id)
         {
             try
             {
-                var viewModel = await _iPersonManager.GetPersonAsync(id);
+                var viewModel = await _iToolInfoApproverSourceManager.GetToolInfoApproverSourceAsync(id);
                 if (viewModel == null)
                 {
                     return NotFound();
@@ -131,16 +131,16 @@ namespace lab.LocalCosmosDbApp.Controllers
             }
         }
 
-        // POST: Person/Edit/5
+        // POST: ToolInfoApproverSource/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, PersonViewModel personViewModel)
+        public async Task<IActionResult> Edit(string id, ToolInfoApproverSourceViewModel personViewModel)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    await _iPersonManager.UpdatePersonAsync(personViewModel);
+                    await _iToolInfoApproverSourceManager.UpdateToolInfoApproverSourceAsync(personViewModel);
                     return RedirectToAction(nameof(Index));
                 }
                 return View(personViewModel);
@@ -151,12 +151,12 @@ namespace lab.LocalCosmosDbApp.Controllers
             }
         }
 
-        // GET: Person/Delete/5
+        // GET: ToolInfoApproverSource/Delete/5
         public async Task<IActionResult> Delete(string id)
         {
             try
             {
-                var viewModel = await _iPersonManager.GetPersonAsync(id);
+                var viewModel = await _iToolInfoApproverSourceManager.GetToolInfoApproverSourceAsync(id);
                 if (viewModel == null)
                 {
                     return NotFound();
@@ -170,20 +170,20 @@ namespace lab.LocalCosmosDbApp.Controllers
             }
         }
 
-        // POST: Person/Delete/5
+        // POST: ToolInfoApproverSource/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
             try
             {
-                var viewModel = await _iPersonManager.GetPersonAsync(id);
+                var viewModel = await _iToolInfoApproverSourceManager.GetToolInfoApproverSourceAsync(id);
                 if (viewModel == null)
                 {
                     return NotFound();
                 }
 
-                await _iPersonManager.DeletePersonAsync(viewModel.Id);
+                await _iToolInfoApproverSourceManager.DeleteToolInfoApproverSourceAsync(viewModel.Id);
                 return RedirectToAction(nameof(Index));
             }
             catch (Exception ex)
@@ -192,9 +192,9 @@ namespace lab.LocalCosmosDbApp.Controllers
             }
         }
 
-        private async Task<bool> PersonViewModelExists(string id)
+        private async Task<bool> ToolInfoApproverSourceViewModelExists(string id)
         {
-            var viewModel = await _iPersonManager.GetPersonAsync(id);
+            var viewModel = await _iToolInfoApproverSourceManager.GetToolInfoApproverSourceAsync(id);
             return viewModel != null ? true : false;
         }
 

@@ -12,25 +12,25 @@ using System.Threading.Tasks;
 
 namespace lab.LocalCosmosDbApp.Managers
 {
-    public class PersonManager : IPersonManager
+    public class ToolInfoApproverSourceManager : IToolInfoApproverSourceManager
     {
-        private readonly IPersonRepository _iPersonRepository;
+        private readonly IToolInfoApproverSourceRepository _iToolInfoApproverSourceRepository;
         private readonly IMapper _iMapper;
 
-        public PersonManager(IPersonRepository iPersonRepository
+        public ToolInfoApproverSourceManager(IToolInfoApproverSourceRepository iToolInfoApproverSourceRepository
             , IMapper iMapper)
         {
-            _iPersonRepository = iPersonRepository;
+            _iToolInfoApproverSourceRepository = iToolInfoApproverSourceRepository;
             _iMapper = iMapper;
         }
         
-        public async Task<PersonViewModel> GetPersonAsync()
+        public async Task<ToolInfoApproverSourceViewModel> GetToolInfoApproverSourceAsync()
         {
             try
             {
-                var dataIEnumerable = await _iPersonRepository.GetPersonsAsync();
+                var dataIEnumerable = await _iToolInfoApproverSourceRepository.GetToolInfoApproverSourcesAsync();
                 var data = dataIEnumerable.FirstOrDefault();
-                return _iMapper.Map<Person, PersonViewModel>(data);
+                return _iMapper.Map<ToolInfoApproverSource, ToolInfoApproverSourceViewModel>(data);
             }
             catch (Exception)
             {
@@ -38,12 +38,12 @@ namespace lab.LocalCosmosDbApp.Managers
             }
         }
 
-        public async Task<PersonViewModel> GetPersonAsync(string id)
+        public async Task<ToolInfoApproverSourceViewModel> GetToolInfoApproverSourceAsync(string id)
         {
             try
             {
-                var data = await _iPersonRepository.GetPersonAsync(id);
-                return _iMapper.Map<Person, PersonViewModel>(data);
+                var data = await _iToolInfoApproverSourceRepository.GetToolInfoApproverSourceAsync(id);
+                return _iMapper.Map<ToolInfoApproverSource, ToolInfoApproverSourceViewModel>(data);
             }
             catch (Exception)
             {
@@ -55,8 +55,8 @@ namespace lab.LocalCosmosDbApp.Managers
         {
             try
             {
-                var modelIEnumerable = await _iPersonRepository.GetPersonsAsync();
-                var viewModelIEnumerable = _iMapper.Map<IEnumerable<Person>, IEnumerable<PersonViewModel>>(modelIEnumerable);
+                var modelIEnumerable = await _iToolInfoApproverSourceRepository.GetToolInfoApproverSourcesAsync();
+                var viewModelIEnumerable = _iMapper.Map<IEnumerable<ToolInfoApproverSource>, IEnumerable<ToolInfoApproverSourceViewModel>>(modelIEnumerable);
 
                 // Global filtering.
                 // Filter is being manually applied due to in-memmory (IEnumerable) data.
@@ -64,12 +64,12 @@ namespace lab.LocalCosmosDbApp.Managers
 
                 int dataCount = viewModelIEnumerable.Count();
                 int filteredDataCount = 0;
-                IEnumerable<PersonViewModel> dataPage;
+                IEnumerable<ToolInfoApproverSourceViewModel> dataPage;
                 if (viewModelIEnumerable.Count() > 0 && request != null)
                 {
                     var filteredData = String.IsNullOrWhiteSpace(request.Search.Value)
                     ? viewModelIEnumerable
-                    : viewModelIEnumerable.Where(_item => _item.PersonName.Contains(request.Search.Value));
+                    : viewModelIEnumerable.Where(_item => _item.Building.Contains(request.Search.Value));
 
                     dataCount = filteredData.Count();
 
@@ -102,12 +102,12 @@ namespace lab.LocalCosmosDbApp.Managers
             }
         }
 
-        public async Task<IEnumerable<PersonViewModel>> GetPersonsAsync()
+        public async Task<IEnumerable<ToolInfoApproverSourceViewModel>> GetToolInfoApproverSourcesAsync()
         {
             try
             {
-                var data = await _iPersonRepository.GetPersonsAsync();
-                return _iMapper.Map<IEnumerable<Person>, IEnumerable<PersonViewModel>>(data);
+                var data = await _iToolInfoApproverSourceRepository.GetToolInfoApproverSourcesAsync();
+                return _iMapper.Map<IEnumerable<ToolInfoApproverSource>, IEnumerable<ToolInfoApproverSourceViewModel>>(data);
             }
             catch (Exception)
             {
@@ -115,19 +115,19 @@ namespace lab.LocalCosmosDbApp.Managers
             }
         }
 
-        public async Task<int> InsertOrUpdatetPersonAsync(PersonViewModel model)
+        public async Task<int> InsertOrUpdatetToolInfoApproverSourceAsync(ToolInfoApproverSourceViewModel model)
         {
-            var data = _iMapper.Map<PersonViewModel, Person>(model);
-            return await _iPersonRepository.InsertOrUpdatetPersonAsync(data);
+            var data = _iMapper.Map<ToolInfoApproverSourceViewModel, ToolInfoApproverSource>(model);
+            return await _iToolInfoApproverSourceRepository.InsertOrUpdatetToolInfoApproverSourceAsync(data);
         }
 
-        public async Task<Result> InsertPersonAsync(PersonViewModel model)
+        public async Task<Result> InsertToolInfoApproverSourceAsync(ToolInfoApproverSourceViewModel model)
         {
             try
             {
-                var data = _iMapper.Map<PersonViewModel, Person>(model);
+                var data = _iMapper.Map<ToolInfoApproverSourceViewModel, ToolInfoApproverSource>(model);
 
-                var saveChange = await _iPersonRepository.InsertPersonAsync(data);
+                var saveChange = await _iToolInfoApproverSourceRepository.InsertToolInfoApproverSourceAsync(data);
 
                 if (saveChange > 0)
                 {
@@ -144,13 +144,13 @@ namespace lab.LocalCosmosDbApp.Managers
             }
         }
 
-        public async Task<Result> UpdatePersonAsync(PersonViewModel model)
+        public async Task<Result> UpdateToolInfoApproverSourceAsync(ToolInfoApproverSourceViewModel model)
         {
             try
             {
-                var data = _iMapper.Map<PersonViewModel, Person>(model);
+                var data = _iMapper.Map<ToolInfoApproverSourceViewModel, ToolInfoApproverSource>(model);
 
-                var saveChange = await _iPersonRepository.UpdatePersonAsync(data);
+                var saveChange = await _iToolInfoApproverSourceRepository.UpdateToolInfoApproverSourceAsync(data);
 
                 if (saveChange > 0)
                 {
@@ -167,16 +167,16 @@ namespace lab.LocalCosmosDbApp.Managers
             }
         }
 
-        public async Task<Result> DeletePersonAsync(string id)
+        public async Task<Result> DeleteToolInfoApproverSourceAsync(string id)
         {
             try
             {
-                var model = await GetPersonAsync(id);
+                var model = await GetToolInfoApproverSourceAsync(id);
                 if (model != null)
                 {
-                    var data = _iMapper.Map<PersonViewModel, Person>(model);
+                    var data = _iMapper.Map<ToolInfoApproverSourceViewModel, ToolInfoApproverSource>(model);
 
-                    var saveChange = await _iPersonRepository.DeletePersonAsync(data);
+                    var saveChange = await _iToolInfoApproverSourceRepository.DeleteToolInfoApproverSourceAsync(data);
 
                     if (saveChange > 0)
                     {
@@ -199,15 +199,15 @@ namespace lab.LocalCosmosDbApp.Managers
         }
     }
 
-    public interface IPersonManager
+    public interface IToolInfoApproverSourceManager
     {
-        Task<PersonViewModel> GetPersonAsync();
-        Task<PersonViewModel> GetPersonAsync(string id);
+        Task<ToolInfoApproverSourceViewModel> GetToolInfoApproverSourceAsync();
+        Task<ToolInfoApproverSourceViewModel> GetToolInfoApproverSourceAsync(string id);
         Task<DataTablesResponse> GetDataTablesResponseAsync(IDataTablesRequest request);
-        Task<IEnumerable<PersonViewModel>> GetPersonsAsync();
-        Task<int> InsertOrUpdatetPersonAsync(PersonViewModel model);
-        Task<Result> InsertPersonAsync(PersonViewModel model);
-        Task<Result> UpdatePersonAsync(PersonViewModel model);
-        Task<Result> DeletePersonAsync(string id);
+        Task<IEnumerable<ToolInfoApproverSourceViewModel>> GetToolInfoApproverSourcesAsync();
+        Task<int> InsertOrUpdatetToolInfoApproverSourceAsync(ToolInfoApproverSourceViewModel model);
+        Task<Result> InsertToolInfoApproverSourceAsync(ToolInfoApproverSourceViewModel model);
+        Task<Result> UpdateToolInfoApproverSourceAsync(ToolInfoApproverSourceViewModel model);
+        Task<Result> DeleteToolInfoApproverSourceAsync(string id);
     }
 }

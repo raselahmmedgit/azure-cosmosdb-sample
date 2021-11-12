@@ -1,111 +1,90 @@
-﻿using lab.LocalCosmosDbApp.EntityModels;
-using Microsoft.Azure.Documents;
-using Microsoft.Azure.Documents.Client;
+﻿using lab.LocalCosmosDbApp.Data;
+using lab.LocalCosmosDbApp.EntityModels;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace lab.LocalCosmosDbApp.Repository
 {
-    public class PersonRepository : BaseRepository<Persons>
+    public class PersonRepository : IPersonRepository
     {
-        public PersonRepository() : base(typeof(Persons).Name)
+        private AppDbContext _context;
+        public PersonRepository()
         {
-
+            _context = new AppDbContext();
         }
-        
-        public async Task<Persons> GetByIdAsync(string id)
+        public PersonRepository(AppDbContext context)
+        {
+            _context = context;
+        }
+
+        public async Task<Person> GetPersonAsync(string id)
+        {
+            return await _context.Person.SingleOrDefaultAsync(x => x.Id == id);
+        }
+
+        public async Task<IEnumerable<Person>> GetPersonsAsync()
+        {
+            return await _context.Person.ToListAsync();
+        }
+
+        public async Task<int> InsertOrUpdatetPersonAsync(Person model)
+        {
+            if (!string.IsNullOrEmpty(model.Id))
+            {
+                await _context.Person.AddAsync(model);
+            }
+            else
+            {
+                _context.Person.Update(model);
+            }
+            return await _context.SaveChangesAsync();
+        }
+
+        public async Task<int> InsertPersonAsync(Person model)
         {
             try
             {
-                var model = _documentClient.CreateDocumentQuery<Persons>(
-                UriFactory.CreateDocumentCollectionUri(_databaseId, _collectionId),
-                new FeedOptions { MaxItemCount = -1 }).Where(x => x.Id == id).FirstOrDefault();
-
-                return model;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-
-        public async Task<List<Persons>> GetAllAsync()
-        {
-            try
-            {
-                var modelList = _documentClient.CreateDocumentQuery<Persons>(
-                UriFactory.CreateDocumentCollectionUri(_databaseId, _collectionId),
-                new FeedOptions { MaxItemCount = -1 }).ToList();
-
-                return modelList;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-
-        public async Task<Document> InsertAsync(Persons person)
-        {
-            try
-            {
-                Document document = new Document();
-                if (person != null)
+                if (!string.IsNullOrEmpty(model.Id))
                 {
-                    person.Id = Guid.NewGuid().ToString();
-                    await InsertItemAsync(person);
-                    document.Id = person.Id;
+                    await _context.Person.AddAsync(model);
                 }
-                return document;
+                return await _context.SaveChangesAsync();
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
 
-        public async Task<Document> UpdateAsync(string id, Persons person)
+        public async Task<int> UpdatePersonAsync(Person model)
         {
-            try
+            if (!string.IsNullOrEmpty(model.Id))
             {
-                Document document = new Document();
-
-                if (person != null)
-                {
-                    await UpdateItemAsync(id, person);
-                    document.Id = person.Id;
-                }
-                return document;
+                _context.Person.Update(model);
             }
-            catch (Exception)
-            {
-
-                throw;
-            }
+            return await _context.SaveChangesAsync();
         }
 
-        public async Task<Document> DeleteAsync(string id)
+        public async Task<int> DeletePersonAsync(Person model)
         {
-            try
+            if (!string.IsNullOrEmpty(model.Id))
             {
-                Document document = new Document();
-
-                var person = await base.GetItemByIdAsync(id);
-
-                if (person != null)
-                {
-                    await DeleteAsync(person.Id);
-                    document.Id = person.Id;
-                }
-                return document;
+                _context.Person.Remove(model);
             }
-            catch (Exception)
-            {
-                throw;
-            }
+            return await _context.SaveChangesAsync();
         }
+
+    }
+
+    public interface IPersonRepository
+    {
+        Task<Person> GetPersonAsync(string id);
+        Task<IEnumerable<Person>> GetPersonsAsync();
+        Task<int> InsertOrUpdatetPersonAsync(Person model);
+        Task<int> InsertPersonAsync(Person model);
+        Task<int> UpdatePersonAsync(Person model);
+        Task<int> DeletePersonAsync(Person model);
     }
 }
