@@ -47,6 +47,8 @@ namespace lab.LocalCosmosDbApp.Exceptions
 
             string message = "Error: There was a problem while processing your request: " + ex.Message;
 
+            //if (ex is Microsoft.Azure.Cosmos.CosmosException) { }
+
             if (ex.InnerException != null)
             {
                 System.Exception inner = ex.InnerException;

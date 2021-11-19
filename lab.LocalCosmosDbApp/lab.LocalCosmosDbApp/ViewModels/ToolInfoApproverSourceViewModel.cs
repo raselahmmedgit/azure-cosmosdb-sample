@@ -16,6 +16,10 @@ namespace lab.LocalCosmosDbApp.ViewModels
         public string Building { get; set; }
         public string BU { get; set; }
         public string KPU { get; set; }
+
+        public DateTime BeginDate { get; set; }
+        public DateTime EndDate { get; set; }
+
         public ToolProfileViewModel ToolProfileViewModel { get; set; }
         public EHSAssignmentViewModel EHSAssignmentViewModel { get; set; }
     }

@@ -27,14 +27,6 @@ namespace lab.LocalCosmosDbApp
         {
             services.AddControllersWithViews();
 
-            // Add our Config object so it can be injected
-            services.Configure<AppDbConnectionConfig>(Configuration.GetSection("AppDbConnectionConfig"));
-            services.Configure<AppContactUsConfig>(Configuration.GetSection("AppContactUsConfig"));
-            services.Configure<AppEmailConfig>(Configuration.GetSection("AppEmailConfig"));
-            services.Configure<AppSmsConfig>(Configuration.GetSection("AppSmsConfig"));
-            services.Configure<AppConfig>(Configuration.GetSection("AppConfig"));
-            services.Configure<SeoConfig>(Configuration.GetSection("SeoConfig"));
-
             BootStrapper.Run(services, Configuration);
         }
 

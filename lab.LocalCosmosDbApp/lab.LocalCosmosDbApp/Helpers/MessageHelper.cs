@@ -46,5 +46,6 @@
         public static string CaptchaSecurityCode = "Please enter the security code as a number.";
 
         public static string DataNotFound = "Data not found.";
+        public static string AlreadyDbExists = "Already Database Exists.";
     }
 }

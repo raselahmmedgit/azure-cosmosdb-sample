@@ -4,6 +4,7 @@ namespace lab.LocalCosmosDbApp.Config
 {
     public class AppDbConnectionConfig
     {
+        public static string Name = "AppDbConnectionConfig";
         public string EndPointUrl { get; set; }
         public string AuthKey { get; set; }
         public string DatabaseName { get; set; }

@@ -7,6 +7,7 @@ namespace lab.LocalCosmosDbApp.Config
 {
     public class AppContactUsConfig
     {
+        public static string Name = "AppContactUsConfig";
         public string EmailAddress { get; set; }
         public string EmailAddressDisplayName { get; set; }
         public string PhoneNumber { get; set; }

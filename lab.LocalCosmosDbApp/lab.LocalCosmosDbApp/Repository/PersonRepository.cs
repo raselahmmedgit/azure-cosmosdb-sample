@@ -10,15 +10,18 @@ namespace lab.LocalCosmosDbApp.Repository
     public class PersonRepository : IPersonRepository
     {
         private AppDbContext _context;
-        public PersonRepository()
+        //public PersonRepository()
+        //{
+        //    _context = new AppDbContext();
+        //}
+        //public PersonRepository(AppDbContext context)
+        //{
+        //    _context = context;
+        //}
+        public PersonRepository(IDbContextFactory<AppDbContext> factory)
         {
-            _context = new AppDbContext();
+            _context = factory.CreateDbContext();
         }
-        public PersonRepository(AppDbContext context)
-        {
-            _context = context;
-        }
-
         public async Task<Person> GetPersonAsync(string id)
         {
             return await _context.Person.SingleOrDefaultAsync(x => x.Id == id);

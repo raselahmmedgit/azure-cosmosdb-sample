@@ -1,29 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace lab.LocalCosmosDbApp.EntityModels
+namespace lab.LocalCosmosDbApp.ViewModels
 {
-    public class ToolInfoApproverSource
+    public class ToolInfoApproverSourceSearch
     {
-        public ToolInfoApproverSource()
-        {
-            ToolProfile = new ToolProfile();
-            EHSAssignment = new EHSAssignment();
-        }
-        public string Id { get; set; }
+        public string ToolInfoApproverSourceId { get; set; }
         public string Building { get; set; }
         public string BU { get; set; }
         public string KPU { get; set; }
+
         public DateTime BeginDate { get; set; }
         public DateTime EndDate { get; set; }
-        public ToolProfile ToolProfile { get; set; }
-        public EHSAssignment EHSAssignment { get; set; }
-    }
 
-    public class ToolProfile
-    {
+        //ToolProfile
         public string ToolId { get; set; }
         public string ToolName { get; set; }
         public string Bay { get; set; }
@@ -33,20 +22,8 @@ namespace lab.LocalCosmosDbApp.EntityModels
         public string ToolOwner { get; set; }
         public string SecondaryContact { get; set; }
         public string LabManager { get; set; }
-    }
 
-    public class EHSAssignment
-    {
-        //public EHSAssignment()
-        //{
-        //    ManagementApprovers = new List<string>();
-        //    BuildingEnvironmentalBackups = new List<string>();
-        //    OccupationalSafetyBackups = new List<string>();
-        //    ChemAuthFacilitiesBackups = new List<string>();
-        //    ProductSafetyBackups = new List<string>();
-        //    AdditionalEHSIHBackups = new List<string>();
-        //}
-
+        //EHSAssignment
         public string RegionSite { get; set; }
 
         //public List<string> ManagementApprovers { get; set; }
@@ -62,5 +39,6 @@ namespace lab.LocalCosmosDbApp.EntityModels
         //public List<string> ProductSafetyBackups { get; set; }
         public string AdditionalEHSIH { get; set; }
         //public List<string> AdditionalEHSIHBackups { get; set; }
+
     }
 }

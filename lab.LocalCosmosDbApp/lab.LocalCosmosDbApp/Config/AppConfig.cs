@@ -4,6 +4,7 @@ namespace lab.LocalCosmosDbApp.Config
 {
     public class AppConfig
     {
+        public static string Name = "AppConfig";
         public string AppWebsite { get; set; }
         public string AppCopyrightText { get; set; }
         public string AppPrefix { get; set; }

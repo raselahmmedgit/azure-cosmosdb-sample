@@ -8,6 +8,7 @@ using System;
 using System.Diagnostics;
 using System.Text;
 using System.Threading.Tasks;
+using static lab.LocalCosmosDbApp.Utility.Enums;
 
 namespace lab.LocalCosmosDbApp.Controllers
 {
@@ -16,23 +17,30 @@ namespace lab.LocalCosmosDbApp.Controllers
         #region Global Variable Declaration
         private readonly ILogger<HomeController> _logger;
         private static IEmailSenderManager _iEmailSenderManager;
+        private static IAppDbInitManager _iAppDbInitManager;
         #endregion
 
         #region Constructor
-        public HomeController(IEmailSenderManager iEmailSenderManager)
+        public HomeController(IEmailSenderManager iEmailSenderManager, IAppDbInitManager iAppDbInitManager)
         {
             ILoggerFactory loggerFactory = new LoggerFactory();
             _logger = loggerFactory.CreateLogger<HomeController>();
             _iEmailSenderManager = iEmailSenderManager;
+            _iAppDbInitManager = iAppDbInitManager;
         }
         #endregion
 
         #region Actions
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             try
             {
+                var season = GetSeason(DateTime.Now);
+
+                _result = await _iAppDbInitManager.InitDatabaseAndMasterDataAsync();
+                ViewBag.DatabaseMessage = _result.Message;
+
                 return View();
             }
             catch (Exception ex)
@@ -116,6 +124,26 @@ namespace lab.LocalCosmosDbApp.Controllers
             {
                 return ErrorView(ex);
             }
+        }
+
+        public SeasonEnum GetSeason(DateTime date)
+        {
+            /* Astronomically Spring begins on March 21st, the 80th day of the year. 
+             * Summer begins on the 172nd day, Fall, the 266th and Winter the 355th.
+             * Of course, on a leap year add one day to each, 81, 173, 267 and 356.*/
+
+            int doy = date.DayOfYear - Convert.ToInt32((DateTime.IsLeapYear(date.Year)) && date.DayOfYear > 59);
+
+            if (doy < 80 || doy >= 355)
+                return SeasonEnum.Winter;
+
+            if (doy >= 80 && doy < 172) 
+                return SeasonEnum.Spring;
+
+            if (doy >= 172 && doy < 266) 
+                return SeasonEnum.Summer;
+
+            return SeasonEnum.Fall;
         }
 
         #endregion

@@ -7,6 +7,7 @@ namespace lab.LocalCosmosDbApp.Config
 {
     public class SeoConfig
     {
+        public static string Name = "SeoConfig";
         public string KeyWords { get; set; }      
     }
 }

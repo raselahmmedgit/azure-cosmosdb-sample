@@ -2,6 +2,7 @@
 {
     public class AppEmailConfig
     {
+        public static string Name = "AppEmailConfig";
         public string FromEmailAddress { get; set; }
         public string FromEmailAddressDisplayName { get; set; }
         public string Password { get; set; }
