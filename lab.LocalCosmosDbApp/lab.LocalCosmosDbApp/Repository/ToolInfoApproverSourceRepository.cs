@@ -166,14 +166,13 @@ namespace lab.LocalCosmosDbApp.Repository
 
             string sql = $"SELECT * FROM ToolInfoApproverSource c WHERE 0=0";
 
-            sql += $" AND LOWER(c.ToolInfoApproverSourceId) LIKE LOWER('%{searchModel.ToolInfoApproverSourceId}%') ";
-            sql += $" AND LOWER(c.Building) LIKE LOWER('%{searchModel.Building}%') ";
-            //sql += $" AND LOWER(c.BU) LIKE LOWER('%{searchModel.BU}%') ";
-            //sql += $" AND LOWER(c.KPU) LIKE LOWER('%{searchModel.KPU}%') ";
+            sql += string.IsNullOrEmpty(searchModel.ToolInfoApproverSourceId) ? string.Empty : $" AND LOWER(c.ToolInfoApproverSourceId) LIKE LOWER('%{searchModel.ToolInfoApproverSourceId}%') ";
+            sql += string.IsNullOrEmpty(searchModel.Building) ? string.Empty : $" AND LOWER(c.Building) LIKE LOWER('%{searchModel.Building}%') ";
+            sql += string.IsNullOrEmpty(searchModel.BU) ? string.Empty : $" AND LOWER(c.BU) LIKE LOWER('%{searchModel.BU}%') ";
+            sql += string.IsNullOrEmpty(searchModel.KPU) ? string.Empty : $" AND LOWER(c.KPU) LIKE LOWER('%{searchModel.KPU}%') ";
 
-            //sql += $" AND LOWER(c.BeginDate) LIKE LOWER('%{searchModel.BeginDate}%') ";
-            //sql += $" AND LOWER(c.EndDate) LIKE LOWER('%{searchModel.EndDate}%') ";
-
+            sql += string.IsNullOrEmpty(searchModel.BeginDate) ? string.Empty : $" AND LOWER(c.BeginDate) LIKE LOWER('%{searchModel.BeginDate}%') ";
+            sql += string.IsNullOrEmpty(searchModel.EndDate) ? string.Empty : $" AND LOWER(c.EndDate) LIKE LOWER('%{searchModel.EndDate}%') ";
 
             //sql += $" AND LOWER(c.ToolProfile.ToolId) LIKE LOWER('%{searchModel.ToolId}%') ";
             //sql += $" AND LOWER(c.ToolProfile.ToolName) LIKE LOWER('%{searchModel.Bay}%') ";
@@ -195,25 +194,14 @@ namespace lab.LocalCosmosDbApp.Repository
             //sql += $" AND LOWER(c.EHSAssignment.AdditionalEHSIH) LIKE LOWER('%{searchModel.AdditionalEHSIH}%') ";
 
             QueryDefinition query = new QueryDefinition(sql);
-
             List<ToolInfoApproverSource> results = new List<ToolInfoApproverSource>();
-            using (FeedIterator<ToolInfoApproverSource> resultSetIterator = container.GetItemQueryIterator<ToolInfoApproverSource>(sql))
+            using (FeedIterator<ToolInfoApproverSource> resultSetIterator = container.GetItemQueryIterator<ToolInfoApproverSource>(query))
             {
                 while (resultSetIterator.HasMoreResults)
                 {
-                    string aa = string.Empty;
-
                     FeedResponse<ToolInfoApproverSource> response = await resultSetIterator.ReadNextAsync();
-
-                    var ss = response.ToList();
-
                     results.AddRange(response);
-                    if (response.Diagnostics != null)
-                    {
-                        Console.WriteLine($"\nQueryWithSqlParameters Diagnostics: {response.Diagnostics.ToString()}");
-                    }
                 }
-
             }
 
             return results;
