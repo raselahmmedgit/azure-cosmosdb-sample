@@ -9,8 +9,8 @@ namespace lab.LocalCosmosDbApp.ViewModels
         public string BU { get; set; }
         public string KPU { get; set; }
 
-        public DateTime BeginDate { get; set; }
-        public DateTime EndDate { get; set; }
+        public string BeginDate { get; set; }
+        public string EndDate { get; set; }
 
         //ToolProfile
         public string ToolId { get; set; }

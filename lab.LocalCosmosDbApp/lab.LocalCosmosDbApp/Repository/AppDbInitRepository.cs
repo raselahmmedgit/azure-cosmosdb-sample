@@ -23,26 +23,26 @@ namespace lab.LocalCosmosDbApp.Repository
             _context = factory.CreateDbContext();
         }
 
-        public async Task<bool> CreateDatabaseIfNotExists()
+        public bool CreateDatabaseIfNotExists()
         {
-            return await _context.Database.EnsureCreatedAsync();
+            return _context.Database.EnsureCreated();
         }
 
-        public async Task<int> CreateTableAndInsertMasterData(List<Person> personList, List<ToolInfoApproverSource> toolInfoApproverSourceList)
+        public int CreateTableAndInsertMasterData(List<Person> personList, List<ToolInfoApproverSource> toolInfoApproverSourceList)
         {
             // Create an instance and save the entity to the database
             
-            await _context.AddRangeAsync(personList);
-            await _context.AddRangeAsync(toolInfoApproverSourceList);
+            _context.AddRange(personList);
+            _context.AddRange(toolInfoApproverSourceList);
 
-            return await _context.SaveChangesAsync();
+            return _context.SaveChanges();
         }
 
     }
 
     public interface IAppDbInitRepository
     {
-        Task<bool> CreateDatabaseIfNotExists();
-        Task<int> CreateTableAndInsertMasterData(List<Person> personList, List<ToolInfoApproverSource> toolInfoApproverSourceList);
+        bool CreateDatabaseIfNotExists();
+        int CreateTableAndInsertMasterData(List<Person> personList, List<ToolInfoApproverSource> toolInfoApproverSourceList);
     }
 }

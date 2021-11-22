@@ -46,6 +46,12 @@
         public static string CaptchaSecurityCode = "Please enter the security code as a number.";
 
         public static string DataNotFound = "Data not found.";
+        public static string CreateDbAndInsertMasterData = "Created database and inserted master data.";
+        public static string CreateDbAndInsertMasterDataFail = "Couldn't created database and inserted master data.";
         public static string AlreadyDbExists = "Already Database Exists.";
+
+        public static string InvalidDateTime = "The {0} is not recognized as a valid Date.";
+        public static string InvalidBeginEndDateTime = "The {0} shouldn't be greater than {1}.";
+        public static string InvalidEndDateTime = "The {0} should be provided.";
     }
 }

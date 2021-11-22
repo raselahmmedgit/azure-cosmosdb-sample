@@ -1,8 +1,10 @@
-﻿using lab.LocalCosmosDbApp.Data;
+﻿using lab.LocalCosmosDbApp.Config;
+using lab.LocalCosmosDbApp.Data;
 using lab.LocalCosmosDbApp.EntityModels;
 using lab.LocalCosmosDbApp.ViewModels;
 using Microsoft.Azure.Cosmos;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +14,7 @@ namespace lab.LocalCosmosDbApp.Repository
 {
     public class ToolInfoApproverSourceRepository : IToolInfoApproverSourceRepository
     {
+        private readonly AppDbConnectionConfig _appDbConnectionConfig;
         private AppDbContext _context;
         //public ToolInfoApproverSourceRepository()
         //{
@@ -21,9 +24,10 @@ namespace lab.LocalCosmosDbApp.Repository
         //{
         //    _context = context;
         //}
-        public ToolInfoApproverSourceRepository(IDbContextFactory<AppDbContext> factory)
+        public ToolInfoApproverSourceRepository(IDbContextFactory<AppDbContext> factory, IOptions<AppDbConnectionConfig> appDbConnectionConfig)
         {
             _context = factory.CreateDbContext();
+            _appDbConnectionConfig = appDbConnectionConfig.Value;
         }
         public async Task<ToolInfoApproverSource> GetToolInfoApproverSourceAsync(string id)
         {
@@ -102,13 +106,13 @@ namespace lab.LocalCosmosDbApp.Repository
             {
                 toolInfoApproverSource = toolInfoApproverSource.Where(m => m.KPU.Contains(searchModel.KPU));
             }
-            if (searchModel.BeginDate != default(DateTime))
+            if (searchModel.BeginDate != null)
             {
-                toolInfoApproverSource = toolInfoApproverSource.Where(m => m.BeginDate >= searchModel.BeginDate);
+                toolInfoApproverSource = toolInfoApproverSource.Where(m => m.BeginDate >= Convert.ToDateTime(searchModel.BeginDate));
             }
-            if (searchModel.EndDate != default(DateTime))
+            if (searchModel.EndDate != null)
             {
-                toolInfoApproverSource = toolInfoApproverSource.Where(m => m.EndDate <= searchModel.EndDate);
+                toolInfoApproverSource = toolInfoApproverSource.Where(m => m.EndDate <= Convert.ToDateTime(searchModel.EndDate));
             }
             if (!string.IsNullOrEmpty(searchModel.ToolId))
             {
@@ -151,19 +155,19 @@ namespace lab.LocalCosmosDbApp.Repository
                 toolInfoApproverSource = toolInfoApproverSource.Where(m => m.EHSAssignment.RegionSite.Contains(searchModel.RegionSite));
             }
 
-            //Container container = _context.Database.GetCosmosClient().GetContainer("LabAssetDb", "LabAssetContainer");
-            //var resultList = await QueryWithSqlParameters(container);
+            
 
             return await toolInfoApproverSource.ToListAsync();
         }
 
-        // <QueryWithSqlParameters>
-        private async Task<IEnumerable<ToolInfoApproverSource>> QueryWithSqlParameters(Container container)
+        public async Task<IEnumerable<ToolInfoApproverSource>> GetToolInfoApproverSourcesWithSqlAsync(ToolInfoApproverSourceSearch searchModel)
         {
+            Container container = _context.Database.GetCosmosClient().GetContainer(_appDbConnectionConfig.DatabaseName, _appDbConnectionConfig.ContainerName);
+
             string sql = $"SELECT * FROM ToolInfoApproverSource c WHERE 0=0";
 
-            //sql += $" AND LOWER(c.ToolInfoApproverSourceId) LIKE LOWER('%{searchModel.ToolInfoApproverSourceId}%') ";
-            //sql += $" AND LOWER(c.Building) LIKE LOWER('%{searchModel.Building}%') ";
+            sql += $" AND LOWER(c.ToolInfoApproverSourceId) LIKE LOWER('%{searchModel.ToolInfoApproverSourceId}%') ";
+            sql += $" AND LOWER(c.Building) LIKE LOWER('%{searchModel.Building}%') ";
             //sql += $" AND LOWER(c.BU) LIKE LOWER('%{searchModel.BU}%') ";
             //sql += $" AND LOWER(c.KPU) LIKE LOWER('%{searchModel.KPU}%') ";
 
@@ -193,16 +197,16 @@ namespace lab.LocalCosmosDbApp.Repository
             QueryDefinition query = new QueryDefinition(sql);
 
             List<ToolInfoApproverSource> results = new List<ToolInfoApproverSource>();
-            using (FeedIterator<ToolInfoApproverSource> resultSetIterator = container.GetItemQueryIterator<ToolInfoApproverSource>(
-                query,
-                requestOptions: new QueryRequestOptions()
-                {
-                    PartitionKey = new PartitionKey("ToolInfoApproverSourceId")
-                }))
+            using (FeedIterator<ToolInfoApproverSource> resultSetIterator = container.GetItemQueryIterator<ToolInfoApproverSource>(sql))
             {
                 while (resultSetIterator.HasMoreResults)
                 {
+                    string aa = string.Empty;
+
                     FeedResponse<ToolInfoApproverSource> response = await resultSetIterator.ReadNextAsync();
+
+                    var ss = response.ToList();
+
                     results.AddRange(response);
                     if (response.Diagnostics != null)
                     {
@@ -214,13 +218,14 @@ namespace lab.LocalCosmosDbApp.Repository
 
             return results;
         }
-        // </QueryWithSqlParameters>
     }
 
     public interface IToolInfoApproverSourceRepository
     {
         Task<ToolInfoApproverSource> GetToolInfoApproverSourceAsync(string id);
         Task<IEnumerable<ToolInfoApproverSource>> GetToolInfoApproverSourcesAsync();
+        Task<IEnumerable<ToolInfoApproverSource>> GetToolInfoApproverSourcesAsync(ToolInfoApproverSourceSearch searchModel);
+        Task<IEnumerable<ToolInfoApproverSource>> GetToolInfoApproverSourcesWithSqlAsync(ToolInfoApproverSourceSearch searchModel);
         Task<int> InsertOrUpdatetToolInfoApproverSourceAsync(ToolInfoApproverSource model);
         Task<int> InsertToolInfoApproverSourceAsync(ToolInfoApproverSource model);
         Task<int> UpdateToolInfoApproverSourceAsync(ToolInfoApproverSource model);

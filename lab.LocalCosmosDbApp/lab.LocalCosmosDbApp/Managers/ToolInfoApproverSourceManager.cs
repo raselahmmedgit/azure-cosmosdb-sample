@@ -115,6 +115,32 @@ namespace lab.LocalCosmosDbApp.Managers
             }
         }
 
+        public async Task<IEnumerable<ToolInfoApproverSource>> GetToolInfoApproverSourcesAsync(ToolInfoApproverSourceSearch searchModel)
+        {
+            try
+            {
+                var modelList = await _iToolInfoApproverSourceRepository.GetToolInfoApproverSourcesAsync(searchModel);
+                return modelList;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public async Task<IEnumerable<ToolInfoApproverSource>> GetToolInfoApproverSourcesWithSqlAsync(ToolInfoApproverSourceSearch searchModel)
+        {
+            try
+            {
+                var modelList = await _iToolInfoApproverSourceRepository.GetToolInfoApproverSourcesWithSqlAsync(searchModel);
+                return modelList;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public async Task<int> InsertOrUpdatetToolInfoApproverSourceAsync(ToolInfoApproverSourceViewModel model)
         {
             var data = _iMapper.Map<ToolInfoApproverSourceViewModel, ToolInfoApproverSource>(model);
@@ -205,6 +231,8 @@ namespace lab.LocalCosmosDbApp.Managers
         Task<ToolInfoApproverSourceViewModel> GetToolInfoApproverSourceAsync(string id);
         Task<DataTablesResponse> GetDataTablesResponseAsync(IDataTablesRequest request);
         Task<IEnumerable<ToolInfoApproverSourceViewModel>> GetToolInfoApproverSourcesAsync();
+        Task<IEnumerable<ToolInfoApproverSource>> GetToolInfoApproverSourcesAsync(ToolInfoApproverSourceSearch searchModel);
+        Task<IEnumerable<ToolInfoApproverSource>> GetToolInfoApproverSourcesWithSqlAsync(ToolInfoApproverSourceSearch searchModel);
         Task<int> InsertOrUpdatetToolInfoApproverSourceAsync(ToolInfoApproverSourceViewModel model);
         Task<Result> InsertToolInfoApproverSourceAsync(ToolInfoApproverSourceViewModel model);
         Task<Result> UpdateToolInfoApproverSourceAsync(ToolInfoApproverSourceViewModel model);

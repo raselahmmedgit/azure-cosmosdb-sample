@@ -25,25 +25,25 @@ namespace lab.LocalCosmosDbApp.Managers
             _iAppDbInitRepository = iAppDbInitRepository;
         }
 
-        public async Task<Result> InitDatabaseAndMasterDataAsync()
+        public Result InitDatabaseAndMasterDataAsync()
         {
             try
             {
                 if (!_appDbConnectionConfig.IsDatabaseCreate)
                 {
-                    var isCreated = await CreateDatabaseIfNotExists();
+                    var isCreated = CreateDatabaseIfNotExists();
                     if (isCreated)
                     {
                         if (!_appDbConnectionConfig.IsMasterDataInsert)
                         {
-                            int saveChange = await CreateTableAndInsertMasterData();
+                            int saveChange = CreateTableAndInsertMasterData();
                             if (saveChange > 0)
                             {
-                                return Result.Ok(MessageHelper.Save);
+                                return Result.Ok(MessageHelper.CreateDbAndInsertMasterData);
                             }
                             else
                             {
-                                return Result.Fail(MessageHelper.SaveFail);
+                                return Result.Fail(MessageHelper.CreateDbAndInsertMasterDataFail);
                             }
                         }
                     }
@@ -57,11 +57,11 @@ namespace lab.LocalCosmosDbApp.Managers
             }
         }
 
-        public async Task<bool> CreateDatabaseIfNotExists()
+        public bool CreateDatabaseIfNotExists()
         {
             try
             {
-                var isCreateDatabase = await _iAppDbInitRepository.CreateDatabaseIfNotExists();
+                var isCreateDatabase = _iAppDbInitRepository.CreateDatabaseIfNotExists();
                 return isCreateDatabase;
             }
             catch (Exception)
@@ -70,7 +70,7 @@ namespace lab.LocalCosmosDbApp.Managers
             }
         }
 
-        public async Task<int> CreateTableAndInsertMasterData()
+        public int CreateTableAndInsertMasterData()
         {
             try
             {
@@ -155,7 +155,7 @@ namespace lab.LocalCosmosDbApp.Managers
 
                 #endregion
 
-                var saveChange = await _iAppDbInitRepository.CreateTableAndInsertMasterData(personList, toolInfoApproverSourceList);
+                var saveChange = _iAppDbInitRepository.CreateTableAndInsertMasterData(personList, toolInfoApproverSourceList);
 
                 return saveChange;
 
@@ -169,8 +169,8 @@ namespace lab.LocalCosmosDbApp.Managers
 
     public interface IAppDbInitManager
     {
-        Task<Result> InitDatabaseAndMasterDataAsync();
-        Task<bool> CreateDatabaseIfNotExists();
-        Task<int> CreateTableAndInsertMasterData();
+        Result InitDatabaseAndMasterDataAsync();
+        bool CreateDatabaseIfNotExists();
+        int CreateTableAndInsertMasterData();
     }
 }

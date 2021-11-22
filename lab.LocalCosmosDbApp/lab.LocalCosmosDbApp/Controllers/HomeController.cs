@@ -17,16 +17,14 @@ namespace lab.LocalCosmosDbApp.Controllers
         #region Global Variable Declaration
         private readonly ILogger<HomeController> _logger;
         private static IEmailSenderManager _iEmailSenderManager;
-        private static IAppDbInitManager _iAppDbInitManager;
         #endregion
 
         #region Constructor
-        public HomeController(IEmailSenderManager iEmailSenderManager, IAppDbInitManager iAppDbInitManager)
+        public HomeController(IEmailSenderManager iEmailSenderManager)
         {
             ILoggerFactory loggerFactory = new LoggerFactory();
             _logger = loggerFactory.CreateLogger<HomeController>();
             _iEmailSenderManager = iEmailSenderManager;
-            _iAppDbInitManager = iAppDbInitManager;
         }
         #endregion
 
@@ -37,10 +35,6 @@ namespace lab.LocalCosmosDbApp.Controllers
             try
             {
                 var season = GetSeason(DateTime.Now);
-
-                _result = await _iAppDbInitManager.InitDatabaseAndMasterDataAsync();
-                ViewBag.DatabaseMessage = _result.Message;
-
                 return View();
             }
             catch (Exception ex)

@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using lab.LocalCosmosDbApp.ViewModels;
-using Microsoft.Extensions.Logging;
-using lab.LocalCosmosDbApp.Managers;
+﻿using DataTables.AspNet.AspNetCore;
 using DataTables.AspNet.Core;
-using DataTables.AspNet.AspNetCore;
+using lab.LocalCosmosDbApp.Managers;
+using lab.LocalCosmosDbApp.Validations;
+using lab.LocalCosmosDbApp.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Threading.Tasks;
 
 namespace lab.LocalCosmosDbApp.Controllers
 {
@@ -36,6 +33,13 @@ namespace lab.LocalCosmosDbApp.Controllers
         {
             try
             {
+                var toolInfoApproverSourceSearch = new ToolInfoApproverSourceSearch { Building = "Sample Building 001", BeginDate = "11/01/2021", EndDate = "11/30/2021" };
+                var fluentValidationResult = FluentValidationHelper.IsValid<ToolInfoApproverSourceSearch, ToolInfoApproverSourceSearchValidator>(toolInfoApproverSourceSearch);
+                if (fluentValidationResult.IsValid)
+                {
+                    var list = await _iToolInfoApproverSourceManager.GetToolInfoApproverSourcesWithSqlAsync(toolInfoApproverSourceSearch);
+                }
+
                 var viewModelList = await _iToolInfoApproverSourceManager.GetToolInfoApproverSourcesAsync();
                 return View(viewModelList);
             }
