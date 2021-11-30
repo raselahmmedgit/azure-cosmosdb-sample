@@ -14,6 +14,8 @@ namespace lab.LocalCosmosDbApp.EntityModels
         [Key]
         public string Id { get; set; }
 
+        public string PersonId { get; set; }
+
         [DisplayName("Name")]
         [Required(ErrorMessage = "Name is required")]
         [MaxLength(200)]

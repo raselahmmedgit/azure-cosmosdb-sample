@@ -13,6 +13,7 @@ namespace lab.LocalCosmosDbApp.EntityModels
             EHSAssignment = new EHSAssignment();
         }
         public string Id { get; set; }
+        public string ToolInfoApproverSourceId { get; set; }
         public string Building { get; set; }
         public string BU { get; set; }
         public string KPU { get; set; }

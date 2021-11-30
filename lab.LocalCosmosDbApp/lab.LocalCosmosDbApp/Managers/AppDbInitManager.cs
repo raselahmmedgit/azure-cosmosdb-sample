@@ -76,8 +76,22 @@ namespace lab.LocalCosmosDbApp.Managers
             {
                 #region Person
                 var personList = new List<Person>();
-                var person1 = new Person() { Id = "c10f6763-1c25-431f-9ceb-e8e3d7c8b88d", PersonName = "Rasel Ahmmed", EmailAddress = "raselahmmed@mail.com", DateOfBirth = new DateTime(1985, 12, 1) };
-                var person2 = new Person() { Id = "e66a44e5-0072-40bc-95c6-ef76df6540eb", PersonName = "John Mia", EmailAddress = "johnmia@mail.com", DateOfBirth = new DateTime(1910, 8, 10) };
+                var person1 = new Person() 
+                { 
+                    //Id = "43914f03-254b-4c99-8ca1-c17ad8c804fd", 
+                    //PersonId = "c10f6763-1c25-431f-9ceb-e8e3d7c8b88d", 
+                    PersonName = "Rasel Ahmmed", 
+                    EmailAddress = "raselahmmed@mail.com", 
+                    DateOfBirth = new DateTime(1985, 12, 1) 
+                };
+                var person2 = new Person() 
+                { 
+                    //Id = "f839484a-b41e-49f6-8366-f0c12ae73421",
+                    //PersonId = "e66a44e5-0072-40bc-95c6-ef76df6540eb",
+                    PersonName = "John Mia", 
+                    EmailAddress = "johnmia@mail.com", 
+                    DateOfBirth = new DateTime(1910, 8, 10) 
+                };
                 personList.Add(person1);
                 personList.Add(person2);
                 #endregion
@@ -86,7 +100,8 @@ namespace lab.LocalCosmosDbApp.Managers
                 var toolInfoApproverSourceList = new List<ToolInfoApproverSource>();
                 //001
                 ToolInfoApproverSource toolInfoApproverSource1 = new ToolInfoApproverSource();
-                toolInfoApproverSource1.Id = "4ebfed32-da3c-4269-8c10-a4d373b859df";
+                //toolInfoApproverSource1.Id = "4c8be70c-0ec3-4ea2-b81d-3a9eea7579cb";
+                //toolInfoApproverSource1.ToolInfoApproverSourceId = "4ebfed32-da3c-4269-8c10-a4d373b859df";
                 toolInfoApproverSource1.Building = "Sample Building 001";
                 toolInfoApproverSource1.BU = "Sample BU 001";
                 toolInfoApproverSource1.KPU = "Sample KPU 001";
@@ -119,7 +134,8 @@ namespace lab.LocalCosmosDbApp.Managers
 
                 //002
                 ToolInfoApproverSource toolInfoApproverSource2 = new ToolInfoApproverSource();
-                toolInfoApproverSource2.Id = "58908831-6b91-412e-8cb1-1f5ef11069c3";
+                //toolInfoApproverSource2.Id = "c919a447-bedb-4d06-83ff-e0c20690c52e";
+                //toolInfoApproverSource2.ToolInfoApproverSourceId = "58908831-6b91-412e-8cb1-1f5ef11069c3";
                 toolInfoApproverSource2.Building = "Sample Building 002";
                 toolInfoApproverSource2.BU = "Sample BU 002";
                 toolInfoApproverSource2.KPU = "Sample KPU 002";

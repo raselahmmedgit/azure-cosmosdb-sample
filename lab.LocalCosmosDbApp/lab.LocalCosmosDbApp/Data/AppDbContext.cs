@@ -80,6 +80,8 @@ namespace lab.LocalCosmosDbApp.Data
                 entity.ToContainer(_appDbConnectionConfig.ContainerName);
                 entity.HasKey(x => x.Id);
                 entity.HasPartitionKey(x => x.Id);
+                entity.Property(x => x.Id).ValueGeneratedOnAdd();
+                entity.Property(x => x.PersonId).ValueGeneratedOnAdd();
             });
 
             modelBuilder.Entity<ToolInfoApproverSource>(entity =>
@@ -87,6 +89,8 @@ namespace lab.LocalCosmosDbApp.Data
                 entity.ToContainer(_appDbConnectionConfig.ContainerName);
                 entity.HasKey(x => x.Id);
                 entity.HasPartitionKey(x => x.Id);
+                entity.Property(x => x.Id).ValueGeneratedOnAdd();
+                entity.Property(x => x.ToolInfoApproverSourceId).ValueGeneratedOnAdd();
                 entity.OwnsOne(x => x.ToolProfile);
                 entity.OwnsOne(x => x.EHSAssignment);
 
