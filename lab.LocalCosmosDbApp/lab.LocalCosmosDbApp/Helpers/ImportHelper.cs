@@ -29,7 +29,7 @@ namespace lab.LocalCosmosDbApp.Helpers
             return value;
         }
 
-        public static IEnumerable<BusinessUnitToolInfoCsvModel> ImportBusinessUnitToolInfoFromCSVFile(IFormFile uploadFile)
+        public static List<BusinessUnitToolInfoCsvModel> ImportBusinessUnitToolInfoFromCSVFile(IFormFile uploadFile)
         {
             try
             {
@@ -39,7 +39,7 @@ namespace lab.LocalCosmosDbApp.Helpers
                     {
                         var businessUnitToolInfoCsvModelList = csv.GetRecords<BusinessUnitToolInfoCsvModel>();
 
-                        return businessUnitToolInfoCsvModelList.AsEnumerable();
+                        return businessUnitToolInfoCsvModelList.ToList();
                     }
                 }
             }
