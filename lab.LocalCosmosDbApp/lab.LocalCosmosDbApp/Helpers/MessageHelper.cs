@@ -53,5 +53,9 @@
         public static string InvalidDateTime = "The {0} is not recognized as a valid Date.";
         public static string InvalidBeginEndDateTime = "The {0} shouldn't be greater than {1}.";
         public static string InvalidEndDateTime = "The {0} should be provided.";
+
+        public static string FileImported = "File uploaded successfully!";
+        public static string FileParseFail = "Problem parsing file!";
+        public static string FilesImportedFail = "File upload failed!";
     }
 }

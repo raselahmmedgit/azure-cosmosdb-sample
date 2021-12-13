@@ -1,0 +1,274 @@
+﻿BU,Fiscal Quarter,Tool Index,Tool,Building,Platform,Products,Applications,Tool Count,Bays in Use,Bays Needed,Installed Chambers,Possible Chambers,Bay Size
+Etch,FY17Q4,1,EL-01,B81/1,Centris,Richmond/Sym3/Sym3Y,"ATC/8-Spoke Source/Actinium Demo/High Bias, 5KL/Alabany/ (Engineering)",1,1,0,6,6,
+Etch,FY17Q4,2,EL-02,B85/H2,Centris,Sym3,Eureka - Space/Mandril/BB/Pillar,1,1,0,6,6,
+Etch,FY17Q4,3,EL-03,B85/D1,AP,DPS ,Mask Etch,1,1,0,4,4,
+Etch,FY17Q4,4,EL-04,B85/C2,Producer GT,Napa/Sonoma,MC Reduction/CIP SH Particle/Low Temp Cathode,1,1,0,2,3,
+Etch,FY17Q4,5,EL-05,B85/D3,Producer RP,eXT,BARC OES/N5 Tri-layer/SFM Qual/ESC Qual/2 MHx Bias Qual,1,1,0,3,3,
+Etch,FY17Q4,6,EL-06,B85/D4,Centris,Sym3,Slim/3D NAND/PCRAM/Staircase/APF/DRAM,1,1,0,4,4,
+Etch,FY17Q4,7,EL-07,B81/3,AP,Sym3/Sym3X,Microzone,1,1,0,3,4,
+Etch,FY17Q4,8,EL-08,B81/14,AP,Sym3/Sym3M/Sym3Y,Al Etch/Logic Productivity,1,1,0,3,4,
+Etch,FY17Q4,9,EL-09,B85/I6,Centris,Sym3,DRAM/HMO/SSD/CMD/TiO Space/Cut B/N5 Line A/N3 Cut B,1,1,0,2,6,
+Etch,FY17Q4,10,EL-10,B81/15,AP,Avatar,NAND HMO/Oxide Etch,1,1,0,4,4,
+Etch,FY17Q4,11,EL-11,B85/C1,Centris,Sym3/Richmond,Field Support/Operation Window/Patterning,1,1,0,6,6,
+Etch,FY17Q4,12,EL-12,B85/A3,Centris +,Mesa/Sym3/Sym3 HT,TiNHMO/N7 CutB/N5 MIM/3D NAND/S-Logic/Saphira MH/Dublin,1,1,0,6,6,
+Etch,FY17Q4,13,EL-13,B81/5,Centris,Sym3/Integra(Richmond)/Sym3 Wide Coil/Sym3Y,HMO/WC/a-Si/SAV/SAC/AIO/Pacifica/Flash Memory,1,1,0,6,6,
+Etch,FY17Q4,14,EL-14,B85/H3,Centris +,Sym3/Mesa,Eureka/Innotron,1,1,0,3,6,
+Etch,FY17Q4,15,EL-15,B85/E1,Centris +,Mica/Sym3,TiN HMO/N7 BEOL/Power Cut/S-Logic/L10 STI/N5 BEOL/FEOL/SSD/CMD/N5 BEOL TiO Space,1,1,0,6,6,
+Etch,FY17Q4,16,EL-16,B85/H4,Centris,Sym3,Actinium/DRAM/Plasma GND Screen/Flash NAND/FEOL/SSD/CMD/N5 BEOLCut B/N5 BEOL TiO Space,1,1,0,6,6,
+Etch,FY17Q4,17,423848,APDC,Centura,Centura Etch,??,1,1,0,4,4,
+Etch,FY17Q4,18,EL-17,B85/B4,Centris ,Richmond,Richmond/OPOP (FY18),0,0,0,0,0,
+Etch,FY17Q4,19,EL-20,B85/D3,Centris ,Richmond,Dielectric (FY19),0,0,0,0,0,
+Etch,FY17Q4,20,EL-21,B81/10,Centris ,Napa,Napa 2.0,0,0,0,0,0,
+Etch,FY17Q4,21,EL-22,B81/10,Centris,Sym3,Sym3 NPI C&F Tool,0,0,0,0,0,
+Etch,FY17Q4,22,EL-23,B85/H3,Centris,Sym3,Sym3 Logic Productivity Tool,0,0,0,0,0,
+Etch,FY17Q4,23,0,0,0,0,Sym3 Memory Productivity Tool,0,0,0,0,0,
+Etch,FY17Q4,24,0,0,0,0,Richmond ,0,0,0,0,0,
+Etch,FY17Q4,25,EL-26,B85/H2,Centris,Sym3,Sym3 refresh FY 21,0,0,0,0,0,
+Etch,FY17Q4,26,EL-27,B85/D4,Centris,Sym3,Sym3 refresh FY 21,0,0,0,0,0,
+Etch,FY17Q4,27,EL-28,B85/A3,Centris,Sym3,Sym3 refresh FY 21,0,0,0,0,0,
+Etch,FY17Q4,28,EL-29,TBD,Centris,Sym3,Sym3 add FY21,0,0,0,0,0,
+Etch,FY17Q4,29,EL-30,TBD,Centris,Richmond,Richmond add FY22,0,0,0, ,0,
+Etch,FY17Q4,30,EL-31,B81/1,Centris,Sym3,Sym3 refresh FY 22,0,0,0,0,0,
+Etch,FY17Q4,31,EL-32,B81/5,Centris,Sym3,Sym3 refresh FY 22,0,0,0,0,0,
+Etch,FY17Q4,32,EL-33,B85/H4,Centris,Sym3,Sym3 refresh FY 22,0,0,0,0,0,
+Etch,FY17Q4,33,EL-34,TBD,Centris,Sym3,Sym3 add FY22,0,0,0,0,0,
+Etch,FY17Q4,34,EL-35,TBD,Centris,Richmond,Richmond add FY22,0,0,0,0,0,
+Etch,FY17Q4,35,EL-36,B81/3,Centris,Sym3,Sym3 refresh FY 23,0,0,0,0,0,
+Etch,FY17Q4,36,EL-37,B81/14,Centris,Sym3,Sym3 refresh FY 23,0,0,0,0,0,
+Etch,FY17Q4,37,EL-38,B85/I6,Centris,Sym3,Sym3 refresh FY 23,0,0,0,0,0,
+Etch,FY17Q4,38,EL-39,TBD,Centris,Sym3,Sym3 add FY23,0,0,0,0,0,
+Etch,FY17Q4,39,EL-40,TBD,Centris,Richmond,Richmond add FY23,0,0,0,0,0,
+Etch,FY18Q4,1,EL-01,B81/1,Centris,Richmond/Sym3/Sym3Y,"ATC/8-Spoke Source/Actinium Demo/High Bias, 5KL/Alabany/ (Engineering)",1,1,0,6,6,
+Etch,FY18Q4,2,EL-02,B85/H2,Centris,Sym3,Eureka - Space/Mandril/BB/Pillar,1,1,0,6,6,
+Etch,FY18Q4,3,EL-03,B85/D1,AP,DPS ,Mask Etch,1,1,0,4,4,
+Etch,FY18Q4,4,EL-04,B85/C2,Producer GT,Napa/Sonoma,MC Reduction/CIP SH Particle/Low Temp Cathode,1,1,0,3,3,
+Etch,FY18Q4,5,EL-05,B85/D3,Producer RP,eXT,BARC OES/N5 Tri-layer/SFM Qual/ESC Qual/2 MHx Bias Qual,0,0,0,0,3,
+Etch,FY18Q4,6,EL-06,B85/D4,Centris,Sym3,Slim/3D NAND/PCRAM/Staircase/APF/DRAM,1,1,0,4,4,
+Etch,FY18Q4,7,EL-07,B81/3,AP,Sym3/Sym3X,Microzone,1,1,0,3,4,
+Etch,FY18Q4,8,EL-08,B81/14,AP,Sym3/Sym3M/Sym3Y,Al Etch/Logic Productivity,1,1,0,3,4,
+Etch,FY18Q4,9,EL-09,B85/I6,Centris,Sym3,DRAM/HMO/SSD/CMD/TiO Space/Cut B/N5 Line A/N3 Cut B,1,1,0,5,6,
+Etch,FY18Q4,10,EL-10,B81/15,AP,Avatar,NAND HMO/Oxide Etch,1,1,0,3,4,
+Etch,FY18Q4,11,EL-11,B85/C1,Centris,Sym3/Richmond,Field Support/Operation Window/Patterning,1,1,0,6,6,
+Etch,FY18Q4,12,EL-12,B85/A3,Centris +,Mesa/Sym3/Sym3 HT,TiNHMO/N7 CutB/N5 MIM/3D NAND/S-Logic/Saphira MH/Dublin,1,1,0,6,6,
+Etch,FY18Q4,13,EL-13,B81/5,Centris,Sym3/Integra(Richmond)/Sym3 Wide Coil/Sym3Y,HMO/WC/a-Si/SAV/SAC/AIO/Pacifica/Flash Memory,1,1,0,6,6,
+Etch,FY18Q4,14,EL-14,B85/H3,Centris +,Sym3/Mesa,Eureka/Innotron,1,1,0,3,6,
+Etch,FY18Q4,15,EL-15,B85/E1,Centris +,Mica/Sym3,TiN HMO/N7 BEOL/Power Cut/S-Logic/L10 STI/N5 BEOL/FEOL/SSD/CMD/N5 BEOL TiO Space,1,1,0,6,6,
+Etch,FY18Q4,16,EL-16,B85/H4,Centris,Sym3,Actinium/DRAM/Plasma GND Screen/Flash NAND/FEOL/SSD/CMD/N5 BEOLCut B/N5 BEOL TiO Space,1,1,0,6,6,
+Etch,FY18Q4,17,423848,APDC,Centura,Centura Etch,??,1,1,0,4,4,
+Etch,FY18Q4,18,EL-17,B85/B4,Centris ,Richmond,Richmond/OPOP (FY18),1,1,0,4,6,
+Etch,FY18Q4,19,EL-20,B85/D3,Centris ,Richmond,Dielectric (FY19),0,0,0,0,0,
+Etch,FY18Q4,20,EL-21,B81/10,Centris ,Napa,Napa 2.0,0,0,0,0,0,
+Etch,FY18Q4,21,EL-22,B81/10,Centris,Sym3,Sym3 NPI C&F Tool,0,0,0,0,0,
+Etch,FY18Q4,22,EL-23,B85/H3,Centris,Sym3,Sym3 Logic Productivity Tool,0,0,0,0,0,
+Etch,FY18Q4,23,0,0,0,0,Sym3 Memory Productivity Tool,0,0,0,0,0,
+Etch,FY18Q4,24,0,0,0,0,Richmond ,0,0,0,0,0,
+Etch,FY18Q4,25,EL-26,B85/H2,Centris,Sym3,Sym3 refresh FY 21,0,0,0,0,0,
+Etch,FY18Q4,26,EL-27,B85/D4,Centris,Sym3,Sym3 refresh FY 21,0,0,0,0,0,
+Etch,FY18Q4,27,EL-28,B85/A3,Centris,Sym3,Sym3 refresh FY 21,0,0,0,0,0,
+Etch,FY18Q4,28,EL-29,TBD,Centris,Sym3,Sym3 add FY21,0,0,0,0,0,
+Etch,FY18Q4,29,EL-30,TBD,Centris,Richmond,Richmond add FY22,0,0,0,0,0,
+Etch,FY18Q4,30,EL-31,B81/1,Centris,Sym3,Sym3 refresh FY 22,0,0,0,0,0,
+Etch,FY18Q4,31,EL-32,B81/5,Centris,Sym3,Sym3 refresh FY 22,0,0,0,0,0,
+Etch,FY18Q4,32,EL-33,B85/H4,Centris,Sym3,Sym3 refresh FY 22,0,0,0,0,0,
+Etch,FY18Q4,33,EL-34,TBD,Centris,Sym3,Sym3 add FY22,0,0,0,0,0,
+Etch,FY18Q4,34,EL-35,TBD,Centris,Richmond,Richmond add FY22,0,0,0,0,0,
+Etch,FY18Q4,35,EL-36,B81/3,Centris,Sym3,Sym3 refresh FY 23,0,0,0,0,0,
+Etch,FY18Q4,36,EL-37,B81/14,Centris,Sym3,Sym3 refresh FY 23,0,0,0,0,0,
+Etch,FY18Q4,37,EL-38,B85/I6,Centris,Sym3,Sym3 refresh FY 23,0,0,0,0,0,
+Etch,FY18Q4,38,EL-39,TBD,Centris,Sym3,Sym3 add FY23,0,0,0,0,0,
+Etch,FY18Q4,39,EL-40,TBD,Centris,Richmond,Richmond add FY23,0,0,0,0,0,
+Etch,FY19Q4,1,EL-01,B81/1,Centris,Richmond/Sym3/Sym3Y,"ATC/8-Spoke Source/Actinium Demo/High Bias, 5KL/Alabany/ (Engineering)",1,1,0,6,6,0
+Etch,FY19Q4,2,EL-02,B85/H2,Centris,Sym3,Eureka - Space/Mandril/BB/Pillar,1,1,0,5,6,0
+Etch,FY19Q4,3,EL-03,B85/D1,AP,DPS ,Mask Etch,1,1,0,4,4,0
+Etch,FY19Q4,4,EL-04,B85/C2,Producer GT,Napa/Sonoma,MC Reduction/CIP SH Particle/Low Temp Cathode,1,1,0,3,3,0
+Etch,FY19Q4,5,EL-05,B85/D3,Producer RP,eXT,BARC OES/N5 Tri-layer/SFM Qual/ESC Qual/2 MHx Bias Qual,0,0,0,0,3,0
+Etch,FY19Q4,6,EL-06,B85/D4,Centris,Sym3,Slim/3D NAND/PCRAM/Staircase/APF/DRAM,1,1,0,4,4,0
+Etch,FY19Q4,7,EL-07,B81/3,AP,Sym3/Sym3X,Microzone,1,1,0,4,4,0
+Etch,FY19Q4,8,EL-08,B81/14,AP,Sym3/Sym3M/Sym3Y,Al Etch/Logic Productivity,1,1,0,4,4,0
+Etch,FY19Q4,9,EL-09,B85/I6,Centris,Sym3,DRAM/HMO/SSD/CMD/TiO Space/Cut B/N5 Line A/N3 Cut B,1,1,0,5,6,0
+Etch,FY19Q4,10,EL-10,B81/15,AP,Avatar,NAND HMO/Oxide Etch,1,1,0,3,4,0
+Etch,FY19Q4,11,EL-11,B85/C1,Centris,Sym3/Richmond,Field Support/Operation Window/Patterning,1,1,0,6,6,0
+Etch,FY19Q4,12,EL-12,B85/A3,Centris +,Mesa/Sym3/Sym3 HT,TiNHMO/N7 CutB/N5 MIM/3D NAND/S-Logic/Saphira MH/Dublin,1,1,0,6,6,0
+Etch,FY19Q4,13,EL-13,B81/5,Centris,Sym3/Integra(Richmond)/Sym3 Wide Coil/Sym3Y,HMO/WC/a-Si/SAV/SAC/AIO/Pacifica/Flash Memory,1,1,0,6,6,0
+Etch,FY19Q4,14,EL-14,B85/H3,Centris +,Sym3/Mesa,Eureka/Innotron,1,1,0,5,6,0
+Etch,FY19Q4,15,EL-15,B85/E1,Centris +,Mica/Sym3,TiN HMO/N7 BEOL/Power Cut/S-Logic/L10 STI/N5 BEOL/FEOL/SSD/CMD/N5 BEOL TiO Space,1,1,0,6,6,0
+Etch,FY19Q4,16,EL-16,B85/H4,Centris,Sym3,Actinium/DRAM/Plasma GND Screen/Flash NAND/FEOL/SSD/CMD/N5 BEOLCut B/N5 BEOL TiO Space,1,1,0,6,6,0
+Etch,FY19Q4,17,423848,APDC,Centura,Centura Etch,??,1,1,0,4,4,0
+Etch,FY19Q4,18,EL-17,B85/B4,Centris ,Richmond,Richmond/OPOP (FY18),1,1,0,4,6,0
+Etch,FY19Q4,19,EL-20,B85/D3,Centris ,Richmond,Dielectric (FY19),1,1,0,4,6,Large
+Etch,FY19Q4,20,EL-21,B81/10,Centris ,Napa,Napa 2.0,1,1,0,3,3,Large
+Etch,FY19Q4,21,EL-22,B81/10,Centris,Sym3,Sym3 NPI C&F Tool,0,0,0,0,0,0
+Etch,FY19Q4,22,EL-23,B85/H3,Centris,Sym3,Sym3 Logic Productivity Tool,0,0,0,0,0,0
+Etch,FY19Q4,23,0,0,0,0,Sym3 Memory Productivity Tool,0,0,0,0,0,0
+Etch,FY19Q4,24,0,0,0,0,Richmond ,0,0,0,0,0,0
+Etch,FY19Q4,25,EL-26,B85/H2,Centris,Sym3,Sym3 refresh FY 21,0,0,0,0,0,0
+Etch,FY19Q4,26,EL-27,B85/D4,Centris,Sym3,Sym3 refresh FY 21,0,0,0,0,0,0
+Etch,FY19Q4,27,EL-28,B85/A3,Centris,Sym3,Sym3 refresh FY 21,0,0,0,0,0,0
+Etch,FY19Q4,28,EL-29,TBD,Centris,Sym3,Sym3 add FY21,0,0,0,0,0,0
+Etch,FY19Q4,29,EL-30,TBD,Centris,Richmond,Richmond add FY22,0,0,0,0,0,0
+Etch,FY19Q4,30,EL-31,B81/1,Centris,Sym3,Sym3 refresh FY 22,0,0,0,0,0,0
+Etch,FY19Q4,31,EL-32,B81/5,Centris,Sym3,Sym3 refresh FY 22,0,0,0,0,0,0
+Etch,FY19Q4,32,EL-33,B85/H4,Centris,Sym3,Sym3 refresh FY 22,0,0,0,0,0,0
+Etch,FY19Q4,33,EL-34,TBD,Centris,Sym3,Sym3 add FY22,0,0,0,0,0,0
+Etch,FY19Q4,34,EL-35,TBD,Centris,Richmond,Richmond add FY22,0,0,0,0,0,0
+Etch,FY19Q4,35,EL-36,B81/3,Centris,Sym3,Sym3 refresh FY 23,0,0,0,0,0,0
+Etch,FY19Q4,36,EL-37,B81/14,Centris,Sym3,Sym3 refresh FY 23,0,0,0,0,0,0
+Etch,FY19Q4,37,EL-38,B85/I6,Centris,Sym3,Sym3 refresh FY 23,0,0,0,0,0,0
+Etch,FY19Q4,38,EL-39,TBD,Centris,Sym3,Sym3 add FY23,0,0,0,0,0,0
+Etch,FY19Q4,39,EL-40,TBD,Centris,Richmond,Richmond add FY23,0,0,0,0,0,0
+Etch,FY20Q4,1,EL-01,B81/1,Centris,Richmond/Sym3/Sym3Y,"ATC/8-Spoke Source/Actinium Demo/High Bias, 5KL/Alabany/ (Engineering)",1,1,0,6,6,0
+Etch,FY20Q4,2,EL-02,B85/H2,Centris,Sym3,Eureka - Space/Mandril/BB/Pillar,1,1,0,5,6,0
+Etch,FY20Q4,3,EL-03,B85/D1,AP,DPS ,Mask Etch,1,1,0,4,4,0
+Etch,FY20Q4,4,EL-04,B85/C2,Producer GT,Napa/Sonoma,MC Reduction/CIP SH Particle/Low Temp Cathode,1,1,0,3,3,0
+Etch,FY20Q4,5,EL-05,B85/D3,Producer RP,eXT,BARC OES/N5 Tri-layer/SFM Qual/ESC Qual/2 MHx Bias Qual,0,0,0,0,3,0
+Etch,FY20Q4,6,EL-06,B85/D4,Centris,Sym3,Slim/3D NAND/PCRAM/Staircase/APF/DRAM,1,1,0,4,4,0
+Etch,FY20Q4,7,EL-07,B81/3,AP,Sym3/Sym3X,Microzone,1,1,0,4,4,0
+Etch,FY20Q4,8,EL-08,B81/14,AP,Sym3/Sym3M/Sym3Y,Al Etch/Logic Productivity,1,1,0,4,4,0
+Etch,FY20Q4,9,EL-09,B85/I6,Centris,Sym3,DRAM/HMO/SSD/CMD/TiO Space/Cut B/N5 Line A/N3 Cut B,1,1,0,6,6,0
+Etch,FY20Q4,10,EL-10,B81/15,AP,Avatar,NAND HMO/Oxide Etch,1,1,0,3,4,0
+Etch,FY20Q4,11,EL-11,B85/C1,Centris,Sym3/Richmond,Field Support/Operation Window/Patterning,1,1,0,6,6,0
+Etch,FY20Q4,12,EL-12,B85/A3,Centris +,Mesa/Sym3/Sym3 HT,TiNHMO/N7 CutB/N5 MIM/3D NAND/S-Logic/Saphira MH/Dublin,1,1,0,6,6,0
+Etch,FY20Q4,13,EL-13,B81/5,Centris,Sym3/Integra(Richmond)/Sym3 Wide Coil/Sym3Y,HMO/WC/a-Si/SAV/SAC/AIO/Pacifica/Flash Memory,1,1,0,6,6,0
+Etch,FY20Q4,14,EL-14,B85/H3,Centris +,Sym3/Mesa,Eureka/Innotron,0,0,0,0,6,0
+Etch,FY20Q4,15,EL-15,B85/E1,Centris +,Mica/Sym3,TiN HMO/N7 BEOL/Power Cut/S-Logic/L10 STI/N5 BEOL/FEOL/SSD/CMD/N5 BEOL TiO Space,1,1,-1,6,6,0
+Etch,FY20Q4,16,EL-16,B85/H4,Centris,Sym3,Actinium/DRAM/Plasma GND Screen/Flash NAND/FEOL/SSD/CMD/N5 BEOLCut B/N5 BEOL TiO Space,1,1,0,6,6,0
+Etch,FY20Q4,17,423848,APDC,Centura,Centura Etch,??,1,1,0,4,4,0
+Etch,FY20Q4,18,EL-17,B85/B4,Centris ,Richmond,Richmond/OPOP (FY18),1,1,0,4,6,0
+Etch,FY20Q4,19,EL-20,B85/D3,Centris ,Richmond,Dielectric (FY19),1,1,0,4,6,0
+Etch,FY20Q4,20,EL-21,B81/10,Centris ,Napa,Napa 2.0,0,0,0,0,0,0
+Etch,FY20Q4,21,EL-22,B81/10,Centris,Sym3,Sym3 NPI C&F Tool,1,1,1,6,6,Large
+Etch,FY20Q4,22,EL-23,B85/H3,Centris,Sym3,Sym3 Logic Productivity Tool,1,1,1,6,6,Large
+Etch,FY20Q4,23,0,0,0,0,Sym3 Memory Productivity Tool,0,0,0,0,0,0
+Etch,FY20Q4,24,0,0,0,0,Richmond ,0,0,0,0,0,0
+Etch,FY20Q4,25,EL-26,B85/H2,Centris,Sym3,Sym3 refresh FY 21,0,0,0,0,0,0
+Etch,FY20Q4,26,EL-27,B85/D4,Centris,Sym3,Sym3 refresh FY 21,0,0,0,0,0,0
+Etch,FY20Q4,27,EL-28,B85/A3,Centris,Sym3,Sym3 refresh FY 21,0,0,0,0,0,0
+Etch,FY20Q4,28,EL-29,TBD,Centris,Sym3,Sym3 add FY21,0,0,0,0,0,0
+Etch,FY20Q4,29,EL-30,TBD,Centris,Richmond,Richmond add FY22,0,0,0,0,0,0
+Etch,FY20Q4,30,EL-31,B81/1,Centris,Sym3,Sym3 refresh FY 22,0,0,0,0,0,0
+Etch,FY20Q4,31,EL-32,B81/5,Centris,Sym3,Sym3 refresh FY 22,0,0,0,0,0,0
+Etch,FY20Q4,32,EL-33,B85/H4,Centris,Sym3,Sym3 refresh FY 22,0,0,0,0,0,0
+Etch,FY20Q4,33,EL-34,TBD,Centris,Sym3,Sym3 add FY22,0,0,0,0,0,0
+Etch,FY20Q4,34,EL-35,TBD,Centris,Richmond,Richmond add FY22,0,0,0,0,0,0
+Etch,FY20Q4,35,EL-36,B81/3,Centris,Sym3,Sym3 refresh FY 23,0,0,0,0,0,0
+Etch,FY20Q4,36,EL-37,B81/14,Centris,Sym3,Sym3 refresh FY 23,0,0,0,0,0,0
+Etch,FY20Q4,37,EL-38,B85/I6,Centris,Sym3,Sym3 refresh FY 23,0,0,0,0,0,0
+Etch,FY20Q4,38,EL-39,TBD,Centris,Sym3,Sym3 add FY23,0,0,0,0,0,0
+Etch,FY20Q4,39,EL-40,TBD,Centris,Richmond,Richmond add FY23,0,0,0,0,0,0
+Etch,FY21Q4,1,EL-01,B81/1,Centris,Richmond/Sym3/Sym3Y,"ATC/8-Spoke Source/Actinium Demo/High Bias, 5KL/Alabany/ (Engineering)",1,1,0,6,6,0
+Etch,FY21Q4,2,EL-02,B85/H2,Centris,Sym3,Eureka - Space/Mandril/BB/Pillar,0,0,-1,0,6,0
+Etch,FY21Q4,3,EL-03,B85/D1,AP,DPS ,Mask Etch,1,1,0,4,4,0
+Etch,FY21Q4,4,EL-04,B85/C2,Producer GT,Napa/Sonoma,MC Reduction/CIP SH Particle/Low Temp Cathode,1,1,0,3,3,0
+Etch,FY21Q4,5,EL-05,B85/D3,Producer RP,eXT,BARC OES/N5 Tri-layer/SFM Qual/ESC Qual/2 MHx Bias Qual,0,0,0,0,3,0
+Etch,FY21Q4,6,EL-06,B85/D4,Centris,Sym3,Slim/3D NAND/PCRAM/Staircase/APF/DRAM,0,0,-1,0,4,0
+Etch,FY21Q4,7,EL-07,B81/3,AP,Sym3/Sym3X,Microzone,1,1,0,4,4,0
+Etch,FY21Q4,8,EL-08,B81/14,AP,Sym3/Sym3M/Sym3Y,Al Etch/Logic Productivity,1,1,0,4,4,0
+Etch,FY21Q4,9,EL-09,B85/I6,Centris,Sym3,DRAM/HMO/SSD/CMD/TiO Space/Cut B/N5 Line A/N3 Cut B,1,1,0,6,6,0
+Etch,FY21Q4,10,EL-10,B81/15,AP,Avatar,NAND HMO/Oxide Etch,1,1,0,3,4,0
+Etch,FY21Q4,11,EL-11,B85/C1,Centris,Sym3/Richmond,Field Support/Operation Window/Patterning,1,1,0,6,6,0
+Etch,FY21Q4,12,EL-12,B85/A3,Centris +,Mesa/Sym3/Sym3 HT,TiNHMO/N7 CutB/N5 MIM/3D NAND/S-Logic/Saphira MH/Dublin,0,0,-1,0,6,0
+Etch,FY21Q4,13,EL-13,B81/5,Centris,Sym3/Integra(Richmond)/Sym3 Wide Coil/Sym3Y,HMO/WC/a-Si/SAV/SAC/AIO/Pacifica/Flash Memory,1,1,0,6,6,0
+Etch,FY21Q4,14,EL-14,B85/H3,Centris +,Sym3/Mesa,Eureka/Innotron,0,0,0,0,6,0
+Etch,FY21Q4,15,EL-15,B85/E1,Centris +,Mica/Sym3,TiN HMO/N7 BEOL/Power Cut/S-Logic/L10 STI/N5 BEOL/FEOL/SSD/CMD/N5 BEOL TiO Space,1,1,0,6,6,0
+Etch,FY21Q4,16,EL-16,B85/H4,Centris,Sym3,Actinium/DRAM/Plasma GND Screen/Flash NAND/FEOL/SSD/CMD/N5 BEOLCut B/N5 BEOL TiO Space,1,1,0,6,6,0
+Etch,FY21Q4,17,423848,APDC,Centura,Centura Etch,??,1,1,0,4,4,0
+Etch,FY21Q4,18,EL-17,B85/B4,Centris ,Richmond,Richmond/OPOP (FY18),1,1,0,4,6,0
+Etch,FY21Q4,19,EL-20,B85/D3,Centris ,Richmond,Dielectric (FY19),1,1,0,4,6,0
+Etch,FY21Q4,20,EL-21,B81/10,Centris ,Napa,Napa 2.0,0,0,0,0,0,0
+Etch,FY21Q4,21,EL-22,B81/10,Centris,Sym3,Sym3 NPI C&F Tool,1,1,0,6,6,0
+Etch,FY21Q4,22,EL-23,B85/H3,Centris,Sym3,Sym3 Logic Productivity Tool,1,1,0,6,6,0
+Etch,FY21Q4,23,0,0,0,0,Sym3 Memory Productivity Tool,0,0,0,0,0,0
+Etch,FY21Q4,24,0,0,0,0,Richmond ,0,0,0,0,0,0
+Etch,FY21Q4,25,EL-26,B85/H2,Centris,Sym3,Sym3 refresh FY 21,1,1,0,6,6,Large
+Etch,FY21Q4,26,EL-27,B85/D4,Centris,Sym3,Sym3 refresh FY 21,1,1,0,6,6,Large
+Etch,FY21Q4,27,EL-28,B85/A3,Centris,Sym3,Sym3 refresh FY 21,1,1,0,6,6,Large
+Etch,FY21Q4,28,EL-29,TBD,Centris,Sym3,Sym3 add FY21,1,1,0,6,6,Large
+Etch,FY21Q4,29,EL-30,TBD,Centris,Richmond,Richmond add FY22,1,1,0,6,6,Large
+Etch,FY21Q4,30,EL-31,B81/1,Centris,Sym3,Sym3 refresh FY 22,0,0,0,0,0,0
+Etch,FY21Q4,31,EL-32,B81/5,Centris,Sym3,Sym3 refresh FY 22,0,0,0,0,0,0
+Etch,FY21Q4,32,EL-33,B85/H4,Centris,Sym3,Sym3 refresh FY 22,0,0,0,0,0,0
+Etch,FY21Q4,33,EL-34,TBD,Centris,Sym3,Sym3 add FY22,1,1,0,6,6,Large
+Etch,FY21Q4,34,EL-35,TBD,Centris,Richmond,Richmond add FY22,1,1,0,6,6,Large
+Etch,FY21Q4,35,EL-36,B81/3,Centris,Sym3,Sym3 refresh FY 23,0,0,0,0,0,0
+Etch,FY21Q4,36,EL-37,B81/14,Centris,Sym3,Sym3 refresh FY 23,0,0,0,0,0,0
+Etch,FY21Q4,37,EL-38,B85/I6,Centris,Sym3,Sym3 refresh FY 23,0,0,0,0,0,0
+Etch,FY21Q4,38,EL-39,TBD,Centris,Sym3,Sym3 add FY23,0,0,0,0,0,0
+Etch,FY21Q4,39,EL-40,TBD,Centris,Richmond,Richmond add FY23,0,0,0,0,0,0
+Etch,FY22Q4,1,EL-01,B81/1,Centris,Richmond/Sym3/Sym3Y,"ATC/8-Spoke Source/Actinium Demo/High Bias, 5KL/Alabany/ (Engineering)",0,0,-1,0,6,0
+Etch,FY22Q4,2,EL-02,B85/H2,Centris,Sym3,Eureka - Space/Mandril/BB/Pillar,0,0,0,0,6,0
+Etch,FY22Q4,3,EL-03,B85/D1,AP,DPS ,Mask Etch,1,1,0,4,4,0
+Etch,FY22Q4,4,EL-04,B85/C2,Producer GT,Napa/Sonoma,MC Reduction/CIP SH Particle/Low Temp Cathode,1,1,0,3,3,0
+Etch,FY22Q4,5,EL-05,B85/D3,Producer RP,eXT,BARC OES/N5 Tri-layer/SFM Qual/ESC Qual/2 MHx Bias Qual,0,0,0,0,3,0
+Etch,FY22Q4,6,EL-06,B85/D4,Centris,Sym3,Slim/3D NAND/PCRAM/Staircase/APF/DRAM,0,0,0,0,4,0
+Etch,FY22Q4,7,EL-07,B81/3,AP,Sym3/Sym3X,Microzone,1,1,0,4,4,0
+Etch,FY22Q4,8,EL-08,B81/14,AP,Sym3/Sym3M/Sym3Y,Al Etch/Logic Productivity,1,1,0,4,4,0
+Etch,FY22Q4,9,EL-09,B85/I6,Centris,Sym3,DRAM/HMO/SSD/CMD/TiO Space/Cut B/N5 Line A/N3 Cut B,1,1,0,6,6,0
+Etch,FY22Q4,10,EL-10,B81/15,AP,Avatar,NAND HMO/Oxide Etch,1,1,0,3,4,0
+Etch,FY22Q4,11,EL-11,B85/C1,Centris,Sym3/Richmond,Field Support/Operation Window/Patterning,1,1,0,6,6,0
+Etch,FY22Q4,12,EL-12,B85/A3,Centris +,Mesa/Sym3/Sym3 HT,TiNHMO/N7 CutB/N5 MIM/3D NAND/S-Logic/Saphira MH/Dublin,0,0,0,0,6,0
+Etch,FY22Q4,13,EL-13,B81/5,Centris,Sym3/Integra(Richmond)/Sym3 Wide Coil/Sym3Y,HMO/WC/a-Si/SAV/SAC/AIO/Pacifica/Flash Memory,0,0,-1,0,6,0
+Etch,FY22Q4,14,EL-14,B85/H3,Centris +,Sym3/Mesa,Eureka/Innotron,0,0,0,0,6,0
+Etch,FY22Q4,15,EL-15,B85/E1,Centris +,Mica/Sym3,TiN HMO/N7 BEOL/Power Cut/S-Logic/L10 STI/N5 BEOL/FEOL/SSD/CMD/N5 BEOL TiO Space,1,1,0,6,6,0
+Etch,FY22Q4,16,EL-16,B85/H4,Centris,Sym3,Actinium/DRAM/Plasma GND Screen/Flash NAND/FEOL/SSD/CMD/N5 BEOLCut B/N5 BEOL TiO Space,0,0,-1,0,6,0
+Etch,FY22Q4,17,423848,APDC,Centura,Centura Etch,??,1,1,0,4,4,0
+Etch,FY22Q4,18,EL-17,B85/B4,Centris ,Richmond,Richmond/OPOP (FY18),1,1,0,4,6,0
+Etch,FY22Q4,19,EL-20,B85/D3,Centris ,Richmond,Dielectric (FY19),1,1,0,4,6,0
+Etch,FY22Q4,20,EL-21,B81/10,Centris ,Napa,Napa 2.0,0,0,0,0,0,0
+Etch,FY22Q4,21,EL-22,B81/10,Centris,Sym3,Sym3 NPI C&F Tool,1,1,0,6,6,0
+Etch,FY22Q4,22,EL-23,B85/H3,Centris,Sym3,Sym3 Logic Productivity Tool,1,1,0,6,6,0
+Etch,FY22Q4,23,0,0,0,0,Sym3 Memory Productivity Tool,0,0,0,0,0,0
+Etch,FY22Q4,24,0,0,0,0,Richmond ,0,0,0,0,0,0
+Etch,FY22Q4,25,EL-26,B85/H2,Centris,Sym3,Sym3 refresh FY 21,1,1,0,6,6,0
+Etch,FY22Q4,26,EL-27,B85/D4,Centris,Sym3,Sym3 refresh FY 21,1,1,0,6,6,0
+Etch,FY22Q4,27,EL-28,B85/A3,Centris,Sym3,Sym3 refresh FY 21,1,1,0,6,6,0
+Etch,FY22Q4,28,EL-29,TBD,Centris,Sym3,Sym3 add FY21,1,1,0,6,6,0
+Etch,FY22Q4,29,EL-30,TBD,Centris,Richmond,Richmond add FY22,1,1,0,6,6,0
+Etch,FY22Q4,30,EL-31,B81/1,Centris,Sym3,Sym3 refresh FY 22,1,1,0,6,6,Large
+Etch,FY22Q4,31,EL-32,B81/5,Centris,Sym3,Sym3 refresh FY 22,1,1,0,6,6,Large
+Etch,FY22Q4,32,EL-33,B85/H4,Centris,Sym3,Sym3 refresh FY 22,1,1,0,6,6,Large
+Etch,FY22Q4,33,EL-34,TBD,Centris,Sym3,Sym3 add FY22,1,1,0,6,6,0
+Etch,FY22Q4,34,EL-35,TBD,Centris,Richmond,Richmond add FY22,1,1,0,6,6,0
+Etch,FY22Q4,35,EL-36,B81/3,Centris,Sym3,Sym3 refresh FY 23,0,0,0,0,0,0
+Etch,FY22Q4,36,EL-37,B81/14,Centris,Sym3,Sym3 refresh FY 23,0,0,0,0,0,0
+Etch,FY22Q4,37,EL-38,B85/I6,Centris,Sym3,Sym3 refresh FY 23,0,0,0,0,0,0
+Etch,FY22Q4,38,EL-39,TBD,Centris,Sym3,Sym3 add FY23,0,0,0,0,0,0
+Etch,FY22Q4,39,EL-40,TBD,Centris,Richmond,Richmond add FY23,0,0,0,0,0,0
+Etch,FY23Q4,1,EL-01,B81/1,Centris,Richmond/Sym3/Sym3Y,"ATC/8-Spoke Source/Actinium Demo/High Bias, 5KL/Alabany/ (Engineering)",0,0,0,0,6,0
+Etch,FY23Q4,2,EL-02,B85/H2,Centris,Sym3,Eureka - Space/Mandril/BB/Pillar,0,0,0,0,6,0
+Etch,FY23Q4,3,EL-03,B85/D1,AP,DPS ,Mask Etch,1,1,0,4,4,0
+Etch,FY23Q4,4,EL-04,B85/C2,Producer GT,Napa/Sonoma,MC Reduction/CIP SH Particle/Low Temp Cathode,1,1,0,3,3,0
+Etch,FY23Q4,5,EL-05,B85/D3,Producer RP,eXT,BARC OES/N5 Tri-layer/SFM Qual/ESC Qual/2 MHx Bias Qual,0,0,0,0,3,0
+Etch,FY23Q4,6,EL-06,B85/D4,Centris,Sym3,Slim/3D NAND/PCRAM/Staircase/APF/DRAM,0,0,0,0,4,0
+Etch,FY23Q4,7,EL-07,B81/3,AP,Sym3/Sym3X,Microzone,0,0,-1,0,4,0
+Etch,FY23Q4,8,EL-08,B81/14,AP,Sym3/Sym3M/Sym3Y,Al Etch/Logic Productivity,0,0,-1,0,4,0
+Etch,FY23Q4,9,EL-09,B85/I6,Centris,Sym3,DRAM/HMO/SSD/CMD/TiO Space/Cut B/N5 Line A/N3 Cut B,0,0,-1,0,6,0
+Etch,FY23Q4,10,EL-10,B81/15,AP,Avatar,NAND HMO/Oxide Etch,1,1,0,3,4,0
+Etch,FY23Q4,11,EL-11,B85/C1,Centris,Sym3/Richmond,Field Support/Operation Window/Patterning,1,1,0,6,6,0
+Etch,FY23Q4,12,EL-12,B85/A3,Centris +,Mesa/Sym3/Sym3 HT,TiNHMO/N7 CutB/N5 MIM/3D NAND/S-Logic/Saphira MH/Dublin,0,0,0,0,6,0
+Etch,FY23Q4,13,EL-13,B81/5,Centris,Sym3/Integra(Richmond)/Sym3 Wide Coil/Sym3Y,HMO/WC/a-Si/SAV/SAC/AIO/Pacifica/Flash Memory,0,0,0,0,6,0
+Etch,FY23Q4,14,EL-14,B85/H3,Centris +,Sym3/Mesa,Eureka/Innotron,0,0,0,0,6,0
+Etch,FY23Q4,15,EL-15,B85/E1,Centris +,Mica/Sym3,TiN HMO/N7 BEOL/Power Cut/S-Logic/L10 STI/N5 BEOL/FEOL/SSD/CMD/N5 BEOL TiO Space,1,1,0,6,6,0
+Etch,FY23Q4,16,EL-16,B85/H4,Centris,Sym3,Actinium/DRAM/Plasma GND Screen/Flash NAND/FEOL/SSD/CMD/N5 BEOLCut B/N5 BEOL TiO Space,0,0,0,0,6,0
+Etch,FY23Q4,17,423848,APDC,Centura,Centura Etch,??,1,1,0,4,4,0
+Etch,FY23Q4,18,EL-17,B85/B4,Centris ,Richmond,Richmond/OPOP (FY18),1,1,0,4,6,0
+Etch,FY23Q4,19,EL-20,B85/D3,Centris ,Richmond,Dielectric (FY19),1,1,0,4,6,0
+Etch,FY23Q4,20,EL-21,B81/10,Centris ,Napa,Napa 2.0,0,0,0,0,0,0
+Etch,FY23Q4,21,EL-22,B81/10,Centris,Sym3,Sym3 NPI C&F Tool,1,1,0,6,6,0
+Etch,FY23Q4,22,EL-23,B85/H3,Centris,Sym3,Sym3 Logic Productivity Tool,1,1,0,6,6,0
+Etch,FY23Q4,23,0,0,0,0,Sym3 Memory Productivity Tool,0,0,0,0,0,0
+Etch,FY23Q4,24,0,0,0,0,Richmond ,0,0,0,0,0,0
+Etch,FY23Q4,25,EL-26,B85/H2,Centris,Sym3,Sym3 refresh FY 21,1,1,0,6,6,0
+Etch,FY23Q4,26,EL-27,B85/D4,Centris,Sym3,Sym3 refresh FY 21,1,1,0,6,6,0
+Etch,FY23Q4,27,EL-28,B85/A3,Centris,Sym3,Sym3 refresh FY 21,1,1,0,6,6,0
+Etch,FY23Q4,28,EL-29,TBD,Centris,Sym3,Sym3 add FY21,1,1,0,6,6,0
+Etch,FY23Q4,29,EL-30,TBD,Centris,Richmond,Richmond add FY22,1,1,0,6,6,0
+Etch,FY23Q4,30,EL-31,B81/1,Centris,Sym3,Sym3 refresh FY 22,1,1,0,6,6,0
+Etch,FY23Q4,31,EL-32,B81/5,Centris,Sym3,Sym3 refresh FY 22,1,1,0,6,6,0
+Etch,FY23Q4,32,EL-33,B85/H4,Centris,Sym3,Sym3 refresh FY 22,1,1,0,6,6,0
+Etch,FY23Q4,33,EL-34,TBD,Centris,Sym3,Sym3 add FY22,1,1,0,6,6,0
+Etch,FY23Q4,34,EL-35,TBD,Centris,Richmond,Richmond add FY22,1,1,0,6,6,0
+Etch,FY23Q4,35,EL-36,B81/3,Centris,Sym3,Sym3 refresh FY 23,1,1,0,6,6,Large
+Etch,FY23Q4,36,EL-37,B81/14,Centris,Sym3,Sym3 refresh FY 23,1,1,0,6,6,Large
+Etch,FY23Q4,37,EL-38,B85/I6,Centris,Sym3,Sym3 refresh FY 23,1,1,0,6,6,Large
+Etch,FY23Q4,38,EL-39,TBD,Centris,Sym3,Sym3 add FY23,0,0,0,0,0,0
+Etch,FY23Q4,39,EL-40,TBD,Centris,Richmond,Richmond add FY23,0,0,0,0,0,0

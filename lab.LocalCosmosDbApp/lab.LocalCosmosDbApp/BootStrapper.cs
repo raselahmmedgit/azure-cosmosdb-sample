@@ -90,6 +90,8 @@ namespace lab.LocalCosmosDbApp
                 services.AddScoped<IToolInfoApproverSourceRepository, ToolInfoApproverSourceRepository>();
                 services.AddScoped<IToolInfoApproverSourceManager, ToolInfoApproverSourceManager>();
 
+                services.AddScoped<IBusinessUnitToolInfoRepository, BusinessUnitToolInfoRepository>();
+                services.AddScoped<IBusinessUnitToolInfoManager, BusinessUnitToolInfoManager>();
             }
             catch (Exception)
             {

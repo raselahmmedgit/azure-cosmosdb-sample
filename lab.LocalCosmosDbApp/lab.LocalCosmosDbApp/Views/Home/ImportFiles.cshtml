@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Import Files Page";
+}
+
+
+@Html.RenderAlert("businessUnitToolInfoMessage")
+
+<div class="row">
+    <div class="col-12">
+        <div class="text-center">
+            <h1 class="display-4">Welcome Local CosmosDb App</h1>
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="card">
+            <div class="row">
+                <div class="col-12">
+                    @using (Html.BeginForm("ImportFiles", "Home", FormMethod.Post, new { id = "importFileForm", enctype = "multipart/form-data" }))
+                    {
+                        <div class="card-header">Please Upload your csv file</div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <input class="uploadFiles" id="uploadFile" name="uploadFile" type="file" accept=".xls,.xlsx,.csv" />
+                                </div>
+                            </div>
+                            <div class="row mt-4" style="padding-top:40px">
+                                <div class="col-12 text-left">
+                                    <button class="btn btn-primary" type="submit">Submit</button>
+                                    <a type="button" href="@Url.Action("Index","Home")" class="btn btn-secondary">
+                                        <i class="fa fa-angle-left"></i> Back
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

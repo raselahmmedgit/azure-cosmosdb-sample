@@ -34,7 +34,7 @@ namespace lab.LocalCosmosDbApp
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IAppDbInitManager iAppDbInitManager)
         {
-            var resultInitDatabaseAndMasterData = iAppDbInitManager.InitDatabaseAndMasterDataAsync();
+            var resultInitDatabaseAndMasterData = iAppDbInitManager.CreateDatabaseIfNotExists();
 
             if (env.IsDevelopment())
             {

@@ -22,6 +22,12 @@ namespace lab.LocalCosmosDbApp.Utility
 
             CreateMap<EHSAssignment, EHSAssignmentViewModel>();
             CreateMap<EHSAssignmentViewModel, EHSAssignment>();
+
+            CreateMap<BusinessUnitToolInfo, BusinessUnitToolInfoViewModel>();
+            CreateMap<BusinessUnitToolInfoViewModel, BusinessUnitToolInfo>();
+
+            CreateMap<BusinessUnitToolInfoViewModel, BusinessUnitToolInfoCsvModel>();
+            CreateMap<BusinessUnitToolInfoCsvModel, BusinessUnitToolInfoViewModel>();
         }
     }
 

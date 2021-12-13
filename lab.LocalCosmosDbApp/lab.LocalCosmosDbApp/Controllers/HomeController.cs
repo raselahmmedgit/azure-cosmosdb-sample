@@ -2,6 +2,7 @@
 using lab.LocalCosmosDbApp.Managers;
 using lab.LocalCosmosDbApp.Models;
 using lab.LocalCosmosDbApp.ViewModels;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -17,14 +18,17 @@ namespace lab.LocalCosmosDbApp.Controllers
         #region Global Variable Declaration
         private readonly ILogger<HomeController> _logger;
         private static IEmailSenderManager _iEmailSenderManager;
+        //IBusinessUnitToolInfoManager
+        private readonly IBusinessUnitToolInfoManager _iBusinessUnitToolInfoManager;
         #endregion
 
         #region Constructor
-        public HomeController(IEmailSenderManager iEmailSenderManager)
+        public HomeController(IEmailSenderManager iEmailSenderManager, IBusinessUnitToolInfoManager iBusinessUnitToolInfoManager)
         {
             ILoggerFactory loggerFactory = new LoggerFactory();
             _logger = loggerFactory.CreateLogger<HomeController>();
             _iEmailSenderManager = iEmailSenderManager;
+            _iBusinessUnitToolInfoManager = iBusinessUnitToolInfoManager;
         }
         #endregion
 
@@ -41,6 +45,51 @@ namespace lab.LocalCosmosDbApp.Controllers
             {
                 return ErrorView(ex);
             }
+        }
+
+        public IActionResult ImportFiles()
+        {
+            try
+            {
+                return View();
+            }
+            catch (Exception ex)
+            {
+                return ErrorView(ex);
+            }
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ImportFiles(IFormFile uploadFile)
+        {
+
+            try
+            {
+                if (uploadFile == null)
+                {
+                    return ErrorNullView();
+                }
+
+                var result = await _iBusinessUnitToolInfoManager.UploadBusinessUnitToolInfosAsync(uploadFile);
+
+                if (result.Success)
+                {
+                    this.FlashSuccess(MessageHelper.FileImported, "businessUnitToolInfoMessage");
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    this.FlashError(MessageHelper.FileParseFail, "businessUnitToolInfoMessage");
+                    return View();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return ErrorView(ex);
+            }
+
         }
 
         [HttpPost]
