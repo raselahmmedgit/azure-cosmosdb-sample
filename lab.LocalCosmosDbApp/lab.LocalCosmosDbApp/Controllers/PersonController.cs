@@ -47,7 +47,7 @@ namespace lab.LocalCosmosDbApp.Controllers
 
         [HttpGet]
         [ResponseCache(NoStore = true, Duration = 0)]
-        public async Task<IActionResult> GetDataAsync(IDataTablesRequest request)
+        public async Task<IActionResult> GetDataAjax(IDataTablesRequest request)
         {
             try
             {

@@ -204,6 +204,60 @@ namespace lab.LocalCosmosDbApp.Repository
             }
         }
 
+        public async Task<IEnumerable<BusinessUnitToolInfo>> ExecuteSqlQuery(string sqlQuery)
+        {
+            using (var client = new DocumentClient(new Uri(_appDbConnectionConfig.EndPointUrl), _appDbConnectionConfig.AuthKey))
+            {
+
+                IDocumentQuery<BusinessUnitToolInfo> query = client.CreateDocumentQuery<BusinessUnitToolInfo>(UriFactory.CreateDocumentCollectionUri(_databaseId, _collectionId), sqlQuery,
+                    new FeedOptions { MaxItemCount = -1, EnableCrossPartitionQuery = true }).AsDocumentQuery();
+
+                List<BusinessUnitToolInfo> results = new List<BusinessUnitToolInfo>();
+                while (query.HasMoreResults)
+                {
+                    results.AddRange(await query.ExecuteNextAsync<BusinessUnitToolInfo>());
+                }
+
+                return results.AsEnumerable();
+            }
+
+        }
+
+        public async Task<IEnumerable<BusinessUnitToolInfo>> ExecuteSqlQueryToGetList(string sqlQuery)
+        {
+            using (var client = new DocumentClient(new Uri(_appDbConnectionConfig.EndPointUrl), _appDbConnectionConfig.AuthKey))
+            {
+                IDocumentQuery<BusinessUnitToolInfo> query = client.CreateDocumentQuery<BusinessUnitToolInfo>(UriFactory.CreateDocumentCollectionUri(_databaseId, _collectionId), sqlQuery,
+                    new FeedOptions { MaxItemCount = -1, EnableCrossPartitionQuery = true }).AsDocumentQuery();
+
+                List<BusinessUnitToolInfo> results = new List<BusinessUnitToolInfo>();
+                while (query.HasMoreResults)
+                {
+                    results.AddRange(await query.ExecuteNextAsync<BusinessUnitToolInfo>());
+                }
+
+                return results.AsEnumerable();
+            }
+            
+        }
+
+        public async Task<BusinessUnitToolInfo> ExecuteSqlQueryToGet(string sqlQuery)
+        {
+            using (var client = new DocumentClient(new Uri(_appDbConnectionConfig.EndPointUrl), _appDbConnectionConfig.AuthKey))
+            {
+                IDocumentQuery<BusinessUnitToolInfo> query = client.CreateDocumentQuery<BusinessUnitToolInfo>(UriFactory.CreateDocumentCollectionUri(_databaseId, _collectionId), sqlQuery,
+                new FeedOptions { MaxItemCount = -1, EnableCrossPartitionQuery = true }).AsDocumentQuery();
+
+                List<BusinessUnitToolInfo> results = new List<BusinessUnitToolInfo>();
+                while (query.HasMoreResults)
+                {
+                    results.AddRange(await query.ExecuteNextAsync<BusinessUnitToolInfo>());
+                }
+
+                return results.FirstOrDefault();
+
+            }
+        }
     }
 
     public interface IBusinessUnitToolInfoRepository
@@ -214,5 +268,7 @@ namespace lab.LocalCosmosDbApp.Repository
         Task<int> InsertBusinessUnitToolInfoAsync(BusinessUnitToolInfo model);
         Task<int> UpdateBusinessUnitToolInfoAsync(BusinessUnitToolInfo model);
         Task<int> DeleteBusinessUnitToolInfoAsync(BusinessUnitToolInfo model);
+        Task<IEnumerable<BusinessUnitToolInfo>> ExecuteSqlQueryToGetList(string sqlQuery);
+        Task<BusinessUnitToolInfo> ExecuteSqlQueryToGet(string sqlQuery);
     }
 }

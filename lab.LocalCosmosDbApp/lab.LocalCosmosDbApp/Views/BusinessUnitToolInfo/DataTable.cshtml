@@ -1,0 +1,30 @@
+﻿@model IEnumerable<lab.LocalCosmosDbApp.ViewModels.BusinessUnitToolInfoViewModel>
+
+@{
+    ViewData["Title"] = "BusinessUnitToolInfo";
+}
+
+<h1>BusinessUnitToolInfo</h1>
+
+<p>
+    <button id="btnAddBusinessUnitToolInfo" class="btn btn-primary">Add BusinessUnitToolInfo</button>
+</p>
+<div class="row">
+    <div class="col-12">
+        <div id="dataTablesBusinessUnitToolInfoReplaceDiv" class="mb-50">
+            <div style="min-height: 200px">
+                <table id="dataTablesBusinessUnitToolInfo" class="table table-striped dataTables" style="width:100%;"></table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="/js/businessunittoolinfo.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            BusinessUnitToolInfo.InitBusinessUnitToolInfo();
+            BusinessUnitToolInfo.LoadDataTables('dataTablesBusinessUnitToolInfo', 10, "/BusinessUnitToolInfo/GetDataAjax");
+        });
+    </script>
+}

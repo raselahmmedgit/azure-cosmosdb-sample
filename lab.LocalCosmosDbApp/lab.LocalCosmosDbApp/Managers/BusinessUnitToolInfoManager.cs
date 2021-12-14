@@ -57,8 +57,8 @@ namespace lab.LocalCosmosDbApp.Managers
         {
             try
             {
-                var modelIEnumerable = await _iBusinessUnitToolInfoRepository.GetBusinessUnitToolInfosAsync();
-                var viewModelIEnumerable = _iMapper.Map<IEnumerable<BusinessUnitToolInfo>, IEnumerable<BusinessUnitToolInfoViewModel>>(modelIEnumerable);
+                var viewModelIEnumerable = await this.GetBusinessUnitToolInfoBySqlQueryAsync();
+                //var viewModelIEnumerable = _iMapper.Map<IEnumerable<BusinessUnitToolInfo>, IEnumerable<BusinessUnitToolInfoViewModel>>(modelIEnumerable);
 
                 // Global filtering.
                 // Filter is being manually applied due to in-memmory (IEnumerable) data.
@@ -230,6 +230,40 @@ namespace lab.LocalCosmosDbApp.Managers
                 throw;
             }
         }
+
+        public async Task<BusinessUnitToolInfoViewModel> GetBusinessUnitToolInfoBySqlQueryAsync(string id)
+        {
+            try
+            {
+                string sql = $"SELECT *"
+                          + $" FROM c where c.businessUnitToolInfoId = \"{id}\"";
+
+                var data = await _iBusinessUnitToolInfoRepository.ExecuteSqlQueryToGet(sql);
+
+                return _iMapper.Map<BusinessUnitToolInfo, BusinessUnitToolInfoViewModel>(data);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public async Task<IEnumerable<BusinessUnitToolInfoViewModel>> GetBusinessUnitToolInfoBySqlQueryAsync()
+        {
+            try
+            {
+                string sql = $"SELECT *"
+                          + $" FROM c";
+
+                var dataList = await _iBusinessUnitToolInfoRepository.ExecuteSqlQueryToGetList(sql);
+
+                return _iMapper.Map< IEnumerable<BusinessUnitToolInfo>, IEnumerable<BusinessUnitToolInfoViewModel>>(dataList);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 
     public interface IBusinessUnitToolInfoManager
@@ -243,5 +277,7 @@ namespace lab.LocalCosmosDbApp.Managers
         Task<Result> UpdateBusinessUnitToolInfoAsync(BusinessUnitToolInfoViewModel model);
         Task<Result> DeleteBusinessUnitToolInfoAsync(string id);
         Task<Result> UploadBusinessUnitToolInfosAsync(IFormFile uploadFile);
+        Task<BusinessUnitToolInfoViewModel> GetBusinessUnitToolInfoBySqlQueryAsync(string id);
+        Task<IEnumerable<BusinessUnitToolInfoViewModel>> GetBusinessUnitToolInfoBySqlQueryAsync();
     }
 }
