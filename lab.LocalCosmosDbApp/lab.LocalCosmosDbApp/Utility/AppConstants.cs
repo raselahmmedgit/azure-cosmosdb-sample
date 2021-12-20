@@ -1,4 +1,6 @@
-﻿namespace lab.LocalCosmosDbApp.Utility
+﻿using System.Collections.Generic;
+
+namespace lab.LocalCosmosDbApp.Utility
 {
     public class AppConstants
     {
@@ -19,7 +21,16 @@
         {
             public static string Admin = "Admin";
             public static string Member = "Member";
+            public static string Reader = "Reader";
         }
+
+        public static List<string> AdminUserControllers = new List<string> { "Account", "User", "Home", "Admin", "Member", "Reader", "BusinessUnitToolInfo", "ToolLabelDetail" };
+        public static List<string> MemberUserControllers = new List<string> { "Account", "Home", "Member", "BusinessUnitToolInfo" };
+        public static List<string> ReaderUserControllers = new List<string> { "Account", "Home", "Reader", "BusinessUnitToolInfo" };
+
+        public static List<string> AdminUserActions = new List<string> { "Index", "Create", "Edit", "Details", "Save", "Delete", "AddAjax", "EditAjax", "DetailsAjax", "SaveAjax", "DeleteAjax", "GetDataTableDataAjax", "ImportFiles", "ExportCsvFiles", "DeleteAll", "Settings" };
+        public static List<string> MemberUserActions = new List<string> { "Index", "Details", "GetDataTableDataAjax" };
+        public static List<string> ReaderUserActions = new List<string> { "Index", "Details", "GetDataTableDataAjax" };
 
     }
 

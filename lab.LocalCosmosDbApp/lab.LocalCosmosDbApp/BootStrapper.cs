@@ -1,4 +1,5 @@
 ﻿using DataTables.AspNet.AspNetCore;
+using lab.LocalCosmosDbApp.Attributes;
 using lab.LocalCosmosDbApp.Config;
 using lab.LocalCosmosDbApp.Data;
 using lab.LocalCosmosDbApp.Extensions;
@@ -92,6 +93,8 @@ namespace lab.LocalCosmosDbApp
 
                 services.AddScoped<IBusinessUnitToolInfoRepository, BusinessUnitToolInfoRepository>();
                 services.AddScoped<IBusinessUnitToolInfoManager, BusinessUnitToolInfoManager>();
+
+                services.AddScoped<InitAuthorizeAttribute>();
             }
             catch (Exception)
             {

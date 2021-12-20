@@ -22,7 +22,7 @@ namespace lab.LocalCosmosDbApp.ViewModels
         public string PossibleChambers { get; set; }
         public string BaySize { get; set; }
 
-        public IEnumerable<BusinessUnitToolInfoCustomFieldViewModel>? CustomFields { get; set; }
+        public IEnumerable<BusinessUnitToolInfoCustomFieldViewModel> CustomFields { get; set; }
 
         public DateTime CreatedDateTime { get; set; }
         public DateTime? LastUpdatedDateTime { get; set; }

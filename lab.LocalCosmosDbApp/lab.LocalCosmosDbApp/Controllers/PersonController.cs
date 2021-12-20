@@ -10,9 +10,12 @@ using Microsoft.Extensions.Logging;
 using lab.LocalCosmosDbApp.Managers;
 using DataTables.AspNet.Core;
 using DataTables.AspNet.AspNetCore;
+using lab.LocalCosmosDbApp.Attributes;
 
 namespace lab.LocalCosmosDbApp.Controllers
 {
+    //[Authorize]
+    //[ServiceFilter(typeof(InitAuthorizeAttribute))]
     public class PersonController : BaseController
     {
         #region Global Variable Declaration
