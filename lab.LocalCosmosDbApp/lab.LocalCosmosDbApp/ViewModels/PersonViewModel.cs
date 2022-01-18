@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace lab.LocalCosmosDbApp.ViewModels
 {
-    public class PersonViewModel
+    public class PersonViewModel : BaseViewModel
     {
         [Key]
         public string Id { get; set; }

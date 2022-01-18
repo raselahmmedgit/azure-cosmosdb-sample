@@ -77,23 +77,69 @@ namespace lab.LocalCosmosDbApp.Managers
                 #region Person
                 var personList = new List<Person>();
                 var person1 = new Person() 
-                { 
+                {
                     //Id = "43914f03-254b-4c99-8ca1-c17ad8c804fd", 
-                    //PersonId = "c10f6763-1c25-431f-9ceb-e8e3d7c8b88d", 
+                    //PersonId = "43914f03-254b-4c99-8ca1-c17ad8c804fd", 
                     PersonName = "Rasel Ahmmed", 
                     EmailAddress = "raselahmmed@mail.com", 
                     DateOfBirth = new DateTime(1985, 12, 1) 
                 };
                 var person2 = new Person() 
-                { 
+                {
                     //Id = "f839484a-b41e-49f6-8366-f0c12ae73421",
-                    //PersonId = "e66a44e5-0072-40bc-95c6-ef76df6540eb",
+                    //PersonId = "f839484a-b41e-49f6-8366-f0c12ae73421",
                     PersonName = "John Mia", 
                     EmailAddress = "johnmia@mail.com", 
                     DateOfBirth = new DateTime(1910, 8, 10) 
                 };
+                var person3 = new Person()
+                {
+                    //Id = "c62a35b4-575c-42be-af8b-ac9ebb5037b4",
+                    //PersonId = "c62a35b4-575c-42be-af8b-ac9ebb5037b4",
+                    PersonName = "Person 3",
+                    EmailAddress = "person3@mail.com",
+                    DateOfBirth = new DateTime(1910, 8, 10)
+                };
+                var person4 = new Person()
+                {
+                    //Id = "e66a44e5-0072-40bc-95c6-ef76df6540eb",
+                    //PersonId = "e66a44e5-0072-40bc-95c6-ef76df6540eb",
+                    PersonName = "Person 4",
+                    EmailAddress = "person4@mail.com",
+                    DateOfBirth = new DateTime(1910, 8, 10)
+                };
+                var person5 = new Person()
+                {
+                    //Id = "c10f6763-1c25-431f-9ceb-e8e3d7c8b88d",
+                    //PersonId = "c10f6763-1c25-431f-9ceb-e8e3d7c8b88d",
+                    PersonName = "Person 5",
+                    EmailAddress = "person5@mail.com",
+                    DateOfBirth = new DateTime(1910, 8, 10)
+                };
+                var person6 = new Person()
+                {
+                    //Id = "92e11c76-41b2-437a-9e97-5483ac40b243",
+                    //PersonId = "92e11c76-41b2-437a-9e97-5483ac40b243",
+                    PersonName = "Person 6",
+                    EmailAddress = "person6@mail.com",
+                    DateOfBirth = new DateTime(1910, 8, 10)
+                };
+                var person7 = new Person()
+                {
+                    //Id = "1fecf70b-f7fd-4c7e-9587-a7a4e4347b05",
+                    //PersonId = "1fecf70b-f7fd-4c7e-9587-a7a4e4347b05",
+                    PersonName = "Person 7",
+                    EmailAddress = "person7@mail.com",
+                    DateOfBirth = new DateTime(1910, 8, 10)
+                };
+
                 personList.Add(person1);
                 personList.Add(person2);
+                personList.Add(person3);
+                personList.Add(person4);
+                personList.Add(person5);
+                personList.Add(person6);
+                personList.Add(person7);
                 #endregion
 
                 #region Tool Info

@@ -51,6 +51,33 @@ $('body').on('click','.nav-menu-header',
 
 var App = function () {
 
+    var appUserRole = {
+        Admin: 'admin',
+        MemberUser: 'memberuser',
+        ReaderUser: 'readeruser'
+    };
+
+    var isDataTableActionRoleAdmin = function (roleName) {
+
+        if (roleName == appUserRole.Admin) {
+            return true;
+        }
+        else {
+            return false;
+        }
+
+    };
+
+    var isDataTableActionRoleMember = function (roleName) {
+
+        if (roleName == appUserRole.MemberUser) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    };
+
     var loaderShow = function () {
 
         //$.blockUI();
@@ -470,16 +497,35 @@ var App = function () {
         return tableColumns;
     }
 
-    var setDataTableSearch = function (dataTableId) {
+    var setDataTableSearch = function (dataTableId, isHide, isCardView, isListView) {
         //App.LoaderShow();
+
+        if (isHide != undefined || isHide != null) {
+            if (isHide) {
+                var dataTables = '#' + dataTableId + '_wrapper';
+                $(dataTables).attr("style", "display: none;");
+            }
+        }
+
         var filterInput = '#' + dataTableId + '_filter label input';
         $(filterInput).attr("placeholder", "Search by keyword");
 
-        var dataTablesHead = '#' + dataTableId + '_wrapper .dataTables_scroll .dataTables_scrollHead';
-        $(dataTablesHead).attr("style", "display:none;");
+        if (isCardView != undefined || isCardView != null) {
+            if (isCardView) {
+                var dataTablesHead = '#' + dataTableId + '_wrapper .dataTables_scroll .dataTables_scrollHead';
+                $(dataTablesHead).attr("style", "display:none;");
+            }
+        }
+
+        if (isListView != undefined || isListView != null) {
+            if (isListView) {
+
+            }
+        }
 
         var dataTablesInfo = '#' + dataTableId + '_wrapper .dataTables_info';
         $(dataTablesInfo).attr("style", "padding: 10px 0px; margin-top: 0.25em;");
+
         //App.LoaderHide();
     };
 
@@ -724,6 +770,10 @@ var App = function () {
     //-----------------------------------------------------
     return {
         Init: initializeApp,
+
+        IsDataTableActionRoleAdmin: isDataTableActionRoleAdmin,
+        IsDataTableActionRoleMember: isDataTableActionRoleMember,
+
         LoaderShow: loaderShow,
         LoaderHide: loaderHide,
 

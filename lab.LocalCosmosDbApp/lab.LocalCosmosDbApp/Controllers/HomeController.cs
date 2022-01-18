@@ -20,15 +20,20 @@ namespace lab.LocalCosmosDbApp.Controllers
         private static IEmailSenderManager _iEmailSenderManager;
         //IBusinessUnitToolInfoManager
         private readonly IBusinessUnitToolInfoManager _iBusinessUnitToolInfoManager;
+        private readonly IAppDbInitManager _iAppDbInitManager;
         #endregion
 
         #region Constructor
-        public HomeController(IEmailSenderManager iEmailSenderManager, IBusinessUnitToolInfoManager iBusinessUnitToolInfoManager)
+        public HomeController(IEmailSenderManager iEmailSenderManager
+            , IBusinessUnitToolInfoManager iBusinessUnitToolInfoManager
+            , IAppDbInitManager iAppDbInitManager
+            )
         {
             ILoggerFactory loggerFactory = new LoggerFactory();
             _logger = loggerFactory.CreateLogger<HomeController>();
             _iEmailSenderManager = iEmailSenderManager;
             _iBusinessUnitToolInfoManager = iBusinessUnitToolInfoManager;
+            _iAppDbInitManager = iAppDbInitManager;
         }
         #endregion
 
@@ -38,7 +43,8 @@ namespace lab.LocalCosmosDbApp.Controllers
         {
             try
             {
-                var season = GetSeason(DateTime.Now);
+                //var season = GetSeason(DateTime.Now);
+                //var result = _iAppDbInitManager.InitDatabaseAndMasterDataAsync();
                 return View();
             }
             catch (Exception ex)

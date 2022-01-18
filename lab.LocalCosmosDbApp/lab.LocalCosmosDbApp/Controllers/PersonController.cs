@@ -50,11 +50,15 @@ namespace lab.LocalCosmosDbApp.Controllers
 
         [HttpGet]
         [ResponseCache(NoStore = true, Duration = 0)]
-        public async Task<IActionResult> GetDataAjax(IDataTablesRequest request)
+        public async Task<IActionResult> GetDataTableDataAjax(IDataTablesRequest request)
         {
             try
             {
-                DataTablesResponse response = await _iPersonManager.GetDataTablesResponseAsync(request);
+                //string currentUserName = Convert.ToString(User?.Identity?.Name);
+                //string currentUserRoleName = Convert.ToString(User.FindFirst(ClaimTypes.Role).Value);
+                string currentUserName = "admin@mail.com";
+                string currentUserRoleName = "admin";
+                DataTablesResponse response = await _iPersonManager.GetDataTablesResponseAsync(request, currentUserName, currentUserRoleName);
                 return new DataTablesJsonResult(response, true);
             }
             catch (Exception ex)

@@ -51,48 +51,53 @@ namespace lab.LocalCosmosDbApp.Managers
             }
         }
 
-        public async Task<DataTablesResponse> GetDataTablesResponseAsync(IDataTablesRequest request)
+        public async Task<DataTablesResponse> GetDataTablesResponseAsync(IDataTablesRequest request, string currentUserName, string currentUserRoleName)
         {
             try
             {
                 var modelIEnumerable = await _iPersonRepository.GetPersonsAsync();
                 var viewModelIEnumerable = _iMapper.Map<IEnumerable<Person>, IEnumerable<PersonViewModel>>(modelIEnumerable);
 
+                var dataList = viewModelIEnumerable.ToList();
+
                 // Global filtering.
                 // Filter is being manually applied due to in-memmory (IEnumerable) data.
                 // If you want something rather easier, check IEnumerableExtensions Sample.
 
-                int dataCount = viewModelIEnumerable.Count();
-                int filteredDataCount = 0;
-                IEnumerable<PersonViewModel> dataPage;
-                if (viewModelIEnumerable.Count() > 0 && request != null)
+                int totalRecords = dataList.Count();
+                int totalRecordsFiltered = 0;
+                List<PersonViewModel> data;
+                if (dataList.Count() > 0 && request != null)
                 {
                     var filteredData = String.IsNullOrWhiteSpace(request.Search.Value)
-                    ? viewModelIEnumerable
-                    : viewModelIEnumerable.Where(_item => _item.PersonName.Contains(request.Search.Value));
-
-                    dataCount = filteredData.Count();
+                    ? dataList
+                    : dataList.Where(_item => _item.PersonName.Contains(request.Search.Value)).ToList();
 
                     // Paging filtered data.
                     // Paging is rather manual due to in-memmory (IEnumerable) data.
-                    dataPage = filteredData.Skip(request.Start).Take(request.Length);
+                    data = filteredData.Skip(request.Start).Take(request.Length).ToList();
 
-                    filteredDataCount = filteredData.Count();
+                    totalRecordsFiltered = filteredData.Count();
                 }
                 else
                 {
-                    var filteredData = viewModelIEnumerable;
+                    var filteredData = dataList;
 
-                    dataCount = filteredData.Count();
+                    data = filteredData;
 
-                    dataPage = filteredData;
-
-                    filteredDataCount = filteredData.Count();
+                    totalRecordsFiltered = filteredData.Count();
                 }
+
+                data.ForEach(x => {
+                    x.User = currentUserName;
+                    x.Role = currentUserRoleName;
+                    x.IsCardView = "true";
+                    x.IsListView = "false";
+                });
 
                 // Response creation. To create your response you need to reference your request, to avoid
                 // request/response tampering and to ensure response will be correctly created.
-                var response = DataTablesResponse.Create(request, dataCount, filteredDataCount, dataPage);
+                var response = DataTablesResponse.Create(request, totalRecords, totalRecordsFiltered, data);
 
                 return response;
             }
@@ -203,7 +208,7 @@ namespace lab.LocalCosmosDbApp.Managers
     {
         Task<PersonViewModel> GetPersonAsync();
         Task<PersonViewModel> GetPersonAsync(string id);
-        Task<DataTablesResponse> GetDataTablesResponseAsync(IDataTablesRequest request);
+        Task<DataTablesResponse> GetDataTablesResponseAsync(IDataTablesRequest request, string currentUserName, string currentUserRoleName);
         Task<IEnumerable<PersonViewModel>> GetPersonsAsync();
         Task<int> InsertOrUpdatetPersonAsync(PersonViewModel model);
         Task<Result> InsertPersonAsync(PersonViewModel model);
